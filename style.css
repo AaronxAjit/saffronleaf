@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 * {
   margin: 0;
@@ -6,19 +5,28 @@
   text-decoration: none;
 }
 
+/* Base styles */
 body {
-  /*overflow: hidden;*/
-  font-family: "Nunito";
+  font-family: 'Nunito', sans-serif;
   font-weight: bold;
   max-width: 100%;
   overflow-x: hidden;
-  box-sizing: border-box; /* Include padding and border in the element's total width */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 header {
-  height: 100vh;
+  height: auto;
   width: 100%;
+  padding: 1rem;
 } 
+
+.side-navbar, .top-navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .side-navbar i{
   margin-left:32px;
@@ -298,6 +306,9 @@ icons a {
 }
 
 .foodbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   position: absolute;
   top: 0;
   left: 13rem;
@@ -319,6 +330,9 @@ icons a {
 } 
 
 .foodbar img {
+  max-width: 100%;
+  height: auto;
+  margin: 0.5rem;
   width: 163%;
   height: 75vh;
   position: relative;
@@ -608,4 +622,31 @@ item-img {
   100% {
     outline-color: #ff9800;
   }
-} 
+}
+
+/* Media queries for responsiveness */
+@media (min-width: 600px) {
+  .side-navbar, .top-navbar {
+    flex-direction: row;
+  }
+
+  .top-navbar .top, .top-navbar .icons {
+    width: auto;
+  }
+
+  .foodbar img {
+    max-width: 45%;
+  }
+}
+
+@media (min-width: 768px) {
+  .foodbar img {
+    max-width: 30%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .foodbar img {
+    max-width: 20%;
+  }
+}
