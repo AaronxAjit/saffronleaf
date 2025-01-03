@@ -1,8 +1,9 @@
+/*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById('nav-menu'),
       navToggle = document.getElementById('nav-toggle'),
       navClose = document.getElementById('nav-close')
 
-
+/* Menu show */
 if(navToggle){
     navToggle.addEventListener('click', () =>{
         navMenu.classList.add('show-menu')
@@ -16,7 +17,7 @@ if(navClose){
     })
 }
 
-
+/*=============== REMOVE MENU MOBILE ===============*/
 const navLink = document.querySelectorAll('.nav__link')
 
 const linkAction = () =>{
@@ -26,7 +27,7 @@ const linkAction = () =>{
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
-
+/*=============== CHANGE BACKGROUND HEADER ===============*/
 const scrollHeader = () =>{
     const header = document.getElementById('header')
     // Add a class if the bottom offset is greater than 50 of the viewport
@@ -36,7 +37,7 @@ const scrollHeader = () =>{
 window.addEventListener('scroll', scrollHeader)
 
 
-
+/*=============== NEW SWIPER ===============*/
 let newSwiper = new Swiper(".new-swiper", {
     spaceBetween: 24,
     loop: 'true',
@@ -54,7 +55,7 @@ let newSwiper = new Swiper(".new-swiper", {
     },
 });
 
-
+/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 const sections = document.querySelectorAll('section[id]')
     
 const scrollActive = () =>{
@@ -75,7 +76,7 @@ const scrollActive = () =>{
 }
 window.addEventListener('scroll', scrollActive)
 
-
+/*=============== SHOW SCROLL UP ===============*/ 
 const scrollUp = () =>{
 	const scrollUp = document.getElementById('scroll-up')
     // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
