@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--=============== FAVICON ===============-->
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+>
     <!--=============== BOXICONS ===============-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <!--=============== CSS ===============-->
@@ -25,10 +24,10 @@
                         <a href="#home" class="nav__link active-link">Home</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#featured" class="nav__link">Popular</a>
+                        <a href="#featured" class="nav__link">Specials</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#products" class="nav__link">Food</a>
+                        <a href="#products" class="nav__link">Foods</a>
                     </li>
                     <li class="nav__item">
                         <a href="#new" class="nav__link">Drinks</a>
@@ -77,44 +76,47 @@
             </div>
         </section>
 
-        <!--==================== Popular ====================-->
+        <!--==================== Weekly Special ====================-->
         <section class="featured section container" id="featured">
             <h2 class="section__title">
-                Popular
+                Weekly Special
             </h2>
-
             <div class="featured__container grid">
-                <article class="featured__card">
-                    <span class="featured__tag">10% OFF</span>
+                <article class="new__card swiper-slide">
+                    <span class="featured__tag">10% off</span>
 
-                    <img src="featured1.png" alt="" class="featured__img">
+                    <img src="featured1.webp" alt="" class="featured__img">
 
-                    <div class="featured__data">
-                        <h3 class="featured__title">indian food 1</h3>
-                        <span class="featured__price">$10</span>
+                    <div class="new__data">
+                        <h3 class="new__title">Drink 1</h3>
+                        <span class="new__price">$10</span>
                     </div>
-                </article>
 
-                <article class="featured__card">
-                    <span class="featured__tag">10% OFF</span>
+                    <button class="button new__button">info</button>
+                </article>
+                <article class="new__card swiper-slide">
+                    <span class="featured__tag">10% off</span>
 
                     <img src="featured2.png" alt="" class="featured__img">
 
-                    <div class="featured__data">
-                        <h3 class="featured__title">indian food 2</h3>
-                        <span class="featured__price">$10</span>
+                    <div class="new__data">
+                        <h3 class="new__title">Drink 1</h3>
+                        <span class="new__price">$10</span>
                     </div>
-                </article>
 
-                <article class="featured__card">
-                    <span class="featured__tag">10% OFF</span>
+                    <button class="button new__button">info</button>
+                </article>
+                <article class="new__card swiper-slide">
+                    <span class="featured__tag">10% off</span>
 
                     <img src="featured3.png" alt="" class="featured__img">
 
-                    <div class="featured__data">
-                        <h3 class="featured__title">Indian food 3</h3>
-                        <span class="featured__price">$10</span>
+                    <div class="new__data">
+                        <h3 class="new__title">Drink 1</h3>
+                        <span class="new__price">$10</span>
                     </div>
+
+                    <button class="button new__button">info</button>
                 </article>
             </div>
         </section>
@@ -171,58 +173,77 @@
                     <h3 class="products__title">Food 3</h3>
                     <span class="products__price">$10</span>
                 </article>
-        <!--==================== NEW ====================-->
-        <section class="new section container" id="new">
-            <h2 class="section__title">
-                Drinks
-            </h2>
-            
-            <div class="new__container">
-                <div class="swiper new-swiper">
-                    <div class="swiper-wrapper">
-                        <article class="new__card swiper-slide">
-                            <span class="new__tag">Cow free</span>
-    
-                            <img src="new1.png" alt="" class="new__img">
-    
-                            <div class="new__data">
-                                <h3 class="new__title">Drink 1</h3>
-                                <span class="new__price">$10</span>
-                            </div>
-    
-                            <button class="button new__button">info</button>
-                        </article>
+                <article class="products__card">
+                    <img src="product3.png" alt="" class="products__img">
 
-                        <article class="new__card swiper-slide">
-                            <span class="new__tag">Cow free</span>
-    
-                            <img src="new2.png" alt="" class="new__img">
-    
-                            <div class="new__data">
-                                <h3 class="new__title">Drink 2</h3>
-                                <span class="new__price">$10</span>
-                            </div>
-    
-                            <button class="button new__button">info</button>
-                        </article>
+                    <h3 class="products__title">Food 3</h3>
+                    <span class="products__price">$10</span>
+                </article>
+                <article class="products__card">
+                    <img src="product3.png" alt="" class="products__img">
 
-                        <article class="new__card swiper-slide">
-                            <span class="new__tag">Cow free</span>
-    
-                            <img src="new3.png" alt="" class="new__img">
-    
-                            <div class="new__data">
-                                <h3 class="new__title">Drink 3</h3>
-                                <span class="new__price">$10</span>
-                            </div>
-    
-                            <button class="button new__button">info</button>
-                        </article>              
+                    <h3 class="products__title">Food 3</h3>
+                    <span class="products__price">$10</span>
+                </article>
+                <article class="products__card">
+                    <img src="product3.png" alt="" class="products__img">
+
+                    <h3 class="products__title">Food 3</h3>
+                    <span class="products__price">$10</span>
+                </article>
+        <!--==================== drinks ====================-->
+        <div class="center-container">
+            <section class="new section container" id="new">
+                <h2 class="section__title">
+                    Drinks
+                </h2>
+                
+                <div class="new__container grid">
+                    <div class="swiper new-swiper">
+                        <div class="swiper-wrapper">
+                            <article class="new__card swiper-slide">
+                                <span class="new__tag">Cow free</span>
+                                <img src="new1.webp" alt="" class="new__img">
+                                <div class="new__data">
+                                    <h3 class="new__title">Drink 1</h3>
+                                   
+                                    <span class="new__price">$10</span>
+                                </div>
+                                <button class="button new__button">info</button>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="swiper new-swiper">
+                        <div class="swiper-wrapper">
+                            <article class="new__card swiper-slide">
+                                <span class="new__tag">Cow free</span>
+                                <img src="new2.png" alt="" class="new__img">
+                                <div class="new__data">
+                                    <h3 class="new__title">Drink 1</h3>
+                                    <span class="new__price">$10</span>
+                                </div>
+                                <button class="button new__button">info</button>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="swiper new-swiper">
+                        <div class="swiper-wrapper">
+                            <article class="new__card swiper-slide">
+                                <span class="new__tag">Cow free</span>
+                                <img src="new3.png" alt="" class="new__img">
+                                <div class="new__data">
+                                    <h3 class="new__title">Drink 1</h3>
+                                   
+                                    <span class="new__price">$10</span>
+                                </div>
+                                <button class="button new__button">info</button>
+                            </article>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     <!--=============== MAIN JS ===============-->
-    <script src="js/main.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
