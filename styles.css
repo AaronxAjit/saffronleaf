@@ -256,27 +256,7 @@ button {
   row-gap: 2.5rem;
 }
 
-.home__img {
- /* width: 240px;*/
-  position: absolute;
-  animation: rotation 30s infinite linear;
-}
 
-.home__img-bg {
-  position: relative;
-}
-
-.home__img-bg img:first-child {
-  position: absolute;
-  top: -60px; /* Adjust this value to move the image higher */
-  width: 95%; /* Adjust this value to make the image smaller */
-}
-
-.home__img-bg img:nth-child(2) {
-  position: absolute; /* Change to absolute positioning */
-  bottom: -45px; /* Adjust this value to move the image down */
-  width: 75%
-}
 
 
 
@@ -667,6 +647,28 @@ button {
     margin-right: var(--mb-1);
   }
 
+  .home__img {
+ /* width: 240px;*/
+  position: absolute;
+  animation: rotation 30s infinite linear;
+}
+
+.home__img-bg {
+  position: relative;
+}
+
+.home__img-bg img:first-child {
+  position: absolute;
+  top: -20px; /* Adjust this value to move the image higher */
+  width: 95%; /* Adjust this value to make the image smaller */
+}
+
+.home__img-bg img:nth-child(2) {
+  position: absolute; /* Change to absolute positioning */
+  bottom: -10px; /* Adjust this value to move the image down */
+  width: 75%
+}
+
   .home__img-bg img:first-child {
     position: absolute;
     top: 0px; /* Adjust this value to move the image higher */
@@ -704,7 +706,27 @@ button {
   .home__img-bg {
     width: 340px;
   }
+.home__img {
+ /* width: 240px;*/
+  position: absolute;
+  animation: rotation 30s infinite linear;
+}
 
+.home__img-bg {
+  position: relative;
+}
+
+.home__img-bg img:first-child {
+  position: absolute;
+  top: -60px; /* Adjust this value to move the image higher */
+  width: 95%; /* Adjust this value to make the image smaller */
+}
+
+.home__img-bg img:nth-child(2) {
+  position: absolute; /* Change to absolute positioning */
+  bottom: -45px; /* Adjust this value to move the image down */
+  width: 75%
+}
   .featured__container {
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
@@ -756,6 +778,28 @@ button {
     top: 47%;
     column-gap: 2rem;
   }
+
+  .home__img {
+ /* width: 240px;*/
+  position: absolute;
+  animation: rotation 30s infinite linear;
+}
+
+.home__img-bg {
+  position: relative;
+}
+
+.home__img-bg img:first-child {
+  position: absolute;
+  top: -60px; /* Adjust this value to move the image higher */
+  width: 95%; /* Adjust this value to make the image smaller */
+}
+
+.home__img-bg img:nth-child(2) {
+  position: absolute; /* Change to absolute positioning */
+  bottom: -45px; /* Adjust this value to move the image down */
+  width: 75%
+}
 
   .featured__title,
   .featured__price,
@@ -846,6 +890,28 @@ button {
     margin-left: auto;
     margin-right: auto;
   }
+
+  .home__img {
+ /* width: 240px;*/
+  position: absolute;
+  animation: rotation 30s infinite linear;
+}
+
+.home__img-bg {
+  position: relative;
+}
+
+.home__img-bg img:first-child {
+  position: absolute;
+  top: -60px; /* Adjust this value to move the image higher */
+  width: 95%; /* Adjust this value to make the image smaller */
+}
+
+.home__img-bg img:nth-child(2) {
+  position: absolute; /* Change to absolute positioning */
+  bottom: -45px; /* Adjust this value to move the image down */
+  width: 75%
+}
   
   .story__container {
     column-gap: 13rem;
