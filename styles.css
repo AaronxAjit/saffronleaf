@@ -276,8 +276,9 @@ button {
 .home__img-bg img:nth-child(2) {
   position: absolute; /* Change to absolute positioning */
   bottom: -15px; /* Adjust this value to move the image down */
-  left: 30px; /* Adjust this value to move the image to the right */
+  left: 40px; /* Adjust this value to move the image to the right */
 }
+
 
 
 @keyframes rotation {
