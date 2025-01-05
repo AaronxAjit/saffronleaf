@@ -266,6 +266,19 @@ button {
   position: relative;
 }
 
+.home__img-bg img:first-child {
+  position: absolute;
+  top: -8px; /* Adjust this value to move the image higher */
+  left: 20px; /* Adjust this value to move the image to the right */
+  width: 60%; /* Adjust this value to make the image smaller */
+}
+
+.home__img-bg img:nth-child(2) {
+  position: absolute; /* Change to absolute positioning */
+  bottom: -15px; /* Adjust this value to move the image down */
+  left: 30px; /* Adjust this value to move the image to the right */
+}
+
 
 @keyframes rotation {
   from {
