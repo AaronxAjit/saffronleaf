@@ -273,9 +273,9 @@ button {
 }
 
 .home__img-bg img:last-child {
-  position: absolute; /* Ensure the second image stays in its original position */
-  top: 20px;
-  right: 20px;
+  position: absolute; /* Change to absolute positioning */
+  top: 30px; /* Adjust this value to move the image down */
+  left: 30px; /* Adjust this value to move the image to the right */
 }
 
 @keyframes rotation {
