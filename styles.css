@@ -514,6 +514,11 @@ button {
   transition: .3s;
 }
 
+.new__card:hover .new__title,
+.new__card:hover .new__price {
+  color: white !important;
+}
+
 .new__tag {
   background-color: var(--first-color);
   padding: .5rem 1rem;
@@ -553,6 +558,13 @@ button {
   font-size: var(--small-font-size);
   transform: translateY(1rem);
   opacity: 0;
+}
+.new__button--hidden {
+  display: none;
+}
+
+.new__card:hover .new__button--hidden {
+  display: inline-block;
 }
 
 .new__card:hover {
