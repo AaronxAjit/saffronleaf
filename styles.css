@@ -267,7 +267,7 @@ button {
 
 .home__img-bg img:first-child {
   position: absolute;
-  top: -20px; /* Adjust this value to move the image higher */
+  top: -15px; /* Adjust this value to move the image higher */
   left: 20px; /* Adjust this value to move the image to the right */
   width: 50%; /* Adjust this value to make the image smaller */
 }
