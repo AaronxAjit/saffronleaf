@@ -258,6 +258,7 @@ button {
 
 .home__img {
   width: 240px;
+  animation: rotation 2s infinite linear;
 }
 
 .home__img-bg {
