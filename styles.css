@@ -274,8 +274,8 @@ button {
 
 .home__img-bg img:last-child {
   position: absolute; /* Change to absolute positioning */
-  top: -50px; /* Adjust this value to move the image down */
-  right: 20px; /* Adjust this value to move the image to the right */
+  bottom: 50px; /* Adjust this value to move the image down */
+  right: 40px; /* Adjust this value to move the image to the right */
 }
 
 @keyframes rotation {
