@@ -260,9 +260,6 @@ button {
   width: 240px;
 }
 
-.home_img {
-  animation: rotation 8s infinite linear;
-}
 .home__img-bg {
   background-color: var(--first-color);
   width: 258px;
