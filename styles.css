@@ -269,11 +269,13 @@ button {
   position: absolute;
   top: -20px; /* Adjust this value to move the image higher */
   left: 20px; /* Adjust this value to move the image to the right */
-  width: 60%; /* Adjust this value to make the image smaller */
+  width: 50%; /* Adjust this value to make the image smaller */
 }
 
 .home__img-bg img:last-child {
-  position: relative; /* Ensure the second image stays in its original position */
+  position: absolute; /* Ensure the second image stays in its original position */
+  top: 20px;
+  right: 20px;
 }
 
 @keyframes rotation {
