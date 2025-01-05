@@ -666,6 +666,14 @@ button {
     margin-left: var(--mb-1);
     margin-right: var(--mb-1);
   }
+
+  .home__img-bg img:first-child {
+    position: absolute;
+    top: 0px; /* Adjust this value to move the image higher */
+    width: 60%; /* Adjust this value to make the image smaller */
+    animation: rotation 30s infinite linear;
+  }
+  
   .home__img-bg {
     width: 220px;
   }
