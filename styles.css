@@ -259,24 +259,24 @@ button {
 .home__img {
   width: 240px;
   animation: rotation 8s infinite linear;
-}
-
-.home__img-bg {
-  position: relative;
-}
-
-.home__img-bg img:first-child {
   position: absolute;
   top: -55px; /* Adjust this value to move the image higher */
   left: 20px; /* Adjust this value to move the image to the right */
   width: 50%; /* Adjust this value to make the image smaller */
 }
 
-.home__img-bg img:last-child {
-  position: absolute; /* Change to absolute positioning */
-  bottom: 100px; /* Adjust this value to move the image down */
-  right: 50px; /* Adjust this value to move the image to the right */
+.home__imgtwo {
+  width: 240px;
+  animation: rotation 5s infinite linear;
+  position: absolute;
+  top: -20px; /* Adjust this value to move the image higher */
+  left: 20px; /* Adjust this value to move the image to the right */
+  width: 50%; /* Adjust this value to make the image smaller */
 }
+.home__img-bg {
+  position: relative;
+}
+
 
 @keyframes rotation {
   from {
