@@ -1046,15 +1046,15 @@ button {
 
 @media (max-width: 768px) {
     .shop-item-image {
-        width: 80px; /* Adjust the size as needed */
+        width: 30px; /* Adjust the size as needed */
         height: auto;
     }
 
     .shop-item-title {
-        font-size: 1.2rem; /* Adjust the size as needed */
+        font-size: .5rem; /* Adjust the size as needed */
     }
 
     .shop-item-price {
-        font-size: 1rem; /* Adjust the size as needed */
+        font-size: .5rem; /* Adjust the size as needed */
     }
 }
