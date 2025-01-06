@@ -1043,18 +1043,3 @@ button {
   overflow: auto; /* Adjust as needed */
   height: auto; /* Adjust as needed */
 }
-
-@media (max-width: 750px) {
-    .shop-item-image {
-        width: 30px; /* Adjust the size as needed */
-        height: auto;
-    }
-
-    .shop-item-title {
-        font-size: .5rem; /* Adjust the size as needed */
-    }
-
-    .shop-item-price {
-        font-size: .5rem; /* Adjust the size as needed */
-    }
-}
