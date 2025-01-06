@@ -225,6 +225,11 @@ button {
 .nav__link:hover {
   color: var(--first-color);
 }
+/*when link is active, it will be bold and have the first color. */
+.nav__link.active {
+  color: var(--first-color);
+  font-weight: bold;
+}
 
 .nav__close {
   font-size: 2rem;
