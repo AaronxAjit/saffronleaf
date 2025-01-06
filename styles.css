@@ -998,35 +998,3 @@ button {
   font-size: 1.75em;
 }
 
-:root {
-  --first-color: hsl(9, 91%, 17%);
-  --light-grey: #827e7e; /* Light grey color */
-  --dark-grey: #b0adad; /* Dark grey color */
-}
-
-.footer {
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 200px; /* Increased height */
-  background-color: var(--first-color);
-  color: var(--light-grey); /* Light grey text color */
-  padding: 20px; /* Add padding around the footer */
-}
-
-.footer h2 {
-  color: var(--dark-grey); /* Dark grey title color */
-  margin-bottom: 10px; /* Add margin between title and other text */
-}
-
-.footer p {
-  margin: 5px 0; /* Add margin between paragraphs */
-}
-
-/* Example CSS to ensure the parent container can accommodate the content */
-.parent-container {
-  overflow: auto; /* Adjust as needed */
-  height: auto; /* Adjust as needed */
-}
