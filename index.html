@@ -9,6 +9,40 @@
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="styles.css">
     <title>Saffron Leaf</title>
+     <style>
+        :root {
+            --first-color: hsl(9, 91%, 17%);
+            --light-grey: #827e7e; /* Light grey color */
+            --dark-grey: #b0adad; /* Dark grey color */
+        }
+
+        .footer {
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 200px; /* Increased height */
+            background-color: var(--first-color);
+            color: var(--light-grey); /* Light grey text color */
+            padding: 20px; /* Add padding around the footer */
+        }
+
+        .footer h2 {
+            color: var(--dark-grey); /* Dark grey title color */
+            margin-bottom: 10px; /* Add margin between title and other text */
+        }
+
+        .footer p {
+            margin: 5px 0; /* Add margin between paragraphs */
+        }
+
+        /* Example CSS to ensure the parent container can accommodate the content */
+        .parent-container {
+            overflow: auto; /* Adjust as needed */
+            height: auto; /* Adjust as needed */
+        }
+    </style>
 </head>
 <body>
     <!--==================== HEADER ====================-->
@@ -124,6 +158,56 @@
                 </article>
             </div>
         </section>
+        <section class="featured section container" id="featured">
+            <h2 class="section__title">
+                Weekly Special
+            </h2>
+            <div class="featured__container grid">
+                <article class="new__card swiper-slide">
+                    <span class="featured__tag">10% off</span>
+
+                    <img src="featured1.png" alt="" class="featured__img">
+
+                    <div class="new__data">
+                        <h3 class="new__title">Samosas</h3>
+                        <span class="new__price">$4.99</span>
+                    </div>
+
+
+                    <h4> Ingredients: </h4>
+                    
+                </article>
+                <article class="new__card swiper-slide">
+                    <span class="featured__tag">10% off</span>
+
+                    <img src="featured2.avif" alt="" class="featured__img">
+
+                    <div class="new__data">
+                        <h3 class="new__title">Mango Lassi</h3>
+                        <span class="new__price">$3.99</span>
+                    </div>
+
+                    <button class="button new__button">Info</button>
+                    <button class="button new__button new__button--hidden">Add to Cart</button>
+                    
+                </article>
+                <article class="new__card swiper-slide">
+                    <span class="featured__tag">10% off</span>
+
+                    <img src="featured3.jpg" alt="" class="featured__img">
+
+                    <div class="new__data">
+                        <h3 class="new__title">Panner Tikka</h3>
+                        <span class="new__price">$9.99</span>
+                    </div>
+
+                    <button class="button new__button">Info</button>
+                    <button class="button new__button new__button--hidden">Add to Cart</button>
+                    
+                </article>
+            </div>
+        </section>
+        <br>
         <footer class="footer section">
             <section class="contact section container" id="contact">
                 <div class="contact__container">
@@ -147,7 +231,7 @@
         </footer>
         <footer class="footer">
             <p>Thank you</p>
-        </footer>  
+        </footer>
     <!--=============== MAIN JS ===============-->
     <script src="main.js"></script>
 </body>
