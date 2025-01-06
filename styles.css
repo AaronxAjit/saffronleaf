@@ -871,3 +871,13 @@ button {
     right: 3rem;
   }
 }
+/*This changes the button to red when hovered on.*/
+#products .products__card:hover {
+  background-color: var(--first-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#products .products__card:hover .products__title,
+#products .products__card:hover .products__price {
+  color: white;
+}
