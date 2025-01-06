@@ -121,7 +121,7 @@ button {
 }
 
 .section {
-  padding: 6.5rem 0 1rem;
+  padding: 1rem 0 1rem;
 }
 
 .section__title {
@@ -489,7 +489,7 @@ button {
 /*=============== PRODUCTS ===============*/
 .products__container {
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 0.1rem;
 }
 
 .products__card {
@@ -499,6 +499,9 @@ button {
   border: 1px solid var(--border-color);
   text-align: center;
   transition: .3s;
+}
+.products__card:hover .button {
+  background-color:white;
 }
 
 #products .products__card:hover {
@@ -560,20 +563,7 @@ button {
   overflow-y: hidden;
   transition: .3s;
 }
-
-#featured .new__card:hover .new__title,
-#featured .new__card:hover .new__price,
-#featured .new__card:hover .featured__tag {
-  color: white;
-}
-
-#new .new__card:hover .shop-item-title,
-#new .new__card:hover .shop-item-price,
-#new .new__card:hover .new__tag,
-#new .new__card:hover .shop-item-button {
-  color: white;
-}
-
+ 
 .new__tag {
   background-color: var(--first-color);
   padding: .5rem 1rem;
@@ -588,7 +578,7 @@ button {
 }
 
 .shop-item-image {
-  height: 215px;
+  height: 175px;
   margin-bottom: var(--mb-1);
 }
 
@@ -646,7 +636,18 @@ button {
   margin-bottom: var(--mb-1-5);
 }
 
+#new .new__card:hover .shop-item-title,
+#new .new__card:hover .shop-item-price,
+#new .new__card:hover .new__tag,
+#new .new__card:hover .shop-item-button {
+  color: white;
+}
 
+#featured .new__card:hover .new__title,
+#featured .new__card:hover .new__price,
+#featured .new__card:hover .featured__tag {
+    color: white;
+}
 /*=============== SCROLL UP ===============*/
 .scrollup {
   position: fixed;
@@ -802,7 +803,7 @@ button {
   .products__container {
     grid-template-columns: repeat(3, 200px);
     justify-content: center;
-    gap: 2.5rem;
+    gap: 0.1rem;
   }
   .products__card {
     padding: 2rem 0;
@@ -995,6 +996,51 @@ button {
 .btn-purchase {
   display: block;
   margin: 40px auto 80px auto;
+  padding: 10px;
   font-size: 1.75em;
+}
+
+:root {
+  --first-color: hsl(9, 91%, 17%);
+  --light-grey: #827e7e; /* Light grey color */
+  --dark-grey: #b0adad; /* Dark grey color */
+}
+
+.footer {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 200px; /* Increased height */
+  background-color: var(--first-color);
+  color: var(--light-grey); /* Light grey text color */
+  padding: 20px; /* Add padding around the footer */
+}
+
+.footer h2 {
+  color: var(--dark-grey); /* Dark grey title color */
+  margin-bottom: 10px; /* Add margin between title and other text */
+}
+
+.footer p {
+  margin: 5px 0; /* Add margin between paragraphs */
+}
+
+@media (max-width: 768px) {
+  .footer {
+    height: auto;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .footer p {
+    margin: 5px 0;
+  }
+}
+/* Example CSS to ensure the parent container can accommodate the content */
+.parent-container {
+  overflow: auto; /* Adjust as needed */
+  height: auto; /* Adjust as needed */
 }
 
