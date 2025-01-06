@@ -1044,7 +1044,7 @@ button {
   height: auto; /* Adjust as needed */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 750px) {
     .shop-item-image {
         width: 30px; /* Adjust the size as needed */
         height: auto;
