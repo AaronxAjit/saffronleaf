@@ -30,8 +30,8 @@
                         <a href="about.html" class="nav__link">About</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#cart-section" class="nav__link">Cart</a>
-                    </li>                    
+                        <a href="menu.html#cart-section" class="nav__link">Cart</a>
+                    </li>
                 </ul>
 
                 <div class="nav__close" id="nav-close">
@@ -48,210 +48,115 @@
     </header>
     <!--==================== MAIN ====================-->
     <main class="main">
-         <!--==================== FOODS ====================-->
-         <section class="products section container" id="products">
-            <h2 class="section__title">
-                Foods
-            </h2>
+        <!--==================== HOME ====================-->
+        <section class="home" id="home">
+            <div class="home__container container grid">
+                <div class="home__img-bg">
+                    <img src="home2.png" alt="" class="home__img">
+                    <img src="home.png" alt="" class="home__img">
+                </div>
 
-            <div class="products__container grid">
-                <article class="products__card">
-                    <img src="product1.png" alt="" class="shop-item-image">
+                <div class="home__social">
+                    <a>
+                        Vegetarian     
+                    </a>
+                    <a>
+                        Indian    
+                    </a>
+                    <a>
+                        Vegan   
+                    </a>
+                </div>
 
-                    <h3 class="shop-item-title">Butter Paneer Masala</h3>
-                    <span class="shop-item-price">$14.99</span>
-
-                    <button class="button">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAilJREFUWEft10uoDmEcx/HPiVzKJQsWFnaEKJRYWBILJUu5ZSE7RewQsVJieySXXNY2SliwkJLbilyyc0nKBim5vH89U/O+55xm5jnz5izOU2/TzPv//57v/P+/55mZAWNsDIwxHuNAVR0Zr1DTCv2pSujD/6exv9Dtbdn/APqJSWMJ6DUWjARU7sgOXEoXXmBxi+26jG1J7wz21QGagi+IY4zleNYCVNgkdGcmrXW4UwcoYq5gawo+hQMtAK3Ew6TzHTPwqy7QetxMwZ8wt5ycCXcEx1LudWwu61RtjBPwHnNSUgDeygQp0h50bnJ1OtmNc02AIjZaVewT0cLtowAK34R/ikLMxuemQMvwNCX9wCzEMWds6SzxaykxNFf0ilS1rIh/jkXpJJbs2xwabMCqlHui48fDuUAHcTITYri03+kGX+UChak/lno/WrauzbCph4r421ibTh7hRgbVV9zDY0SVhoy6HorEnbiYFN5gfgZQZUoToGlpiU5Oqmtwv3KGhgFNgEL6PHalOT50qnQV3xrOeRfxG3Y0BZqHl6UHbkOWf+Hx2DjaFlDobEyb2/Qcmn4ABcfUjn/itWFJ+W2vJmCrLas5Z35YUw+VZxpMBo/HyN4R3gLqxHTR5wLFSosVV4ww+sKeutSJGVLKXKBDOF5S6/pySNfrxLQGtBRPMDEpnsWeHvU6Ma0BhVBMuAnvcGEEG9eJacVD+cuoIjPXQ+NAfatAlfBfwb5ZJVsSrL8AAAAASUVORK5CYII="/>
-                    </button>
-                </article>
-
-                <article class="products__card">
-                    <img src="product2.png" alt="" class="shop-item-image">
-
-                    <h3 class="shop-item-title">Chole Bhature</h3>
-                    <span class="shop-item-price">$19.99</span>
-
-                    <button class="button">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAilJREFUWEft10uoDmEcx/HPiVzKJQsWFnaEKJRYWBILJUu5ZSE7RewQsVJieySXXNY2SliwkJLbilyyc0nKBim5vH89U/O+55xm5jnz5izOU2/TzPv//57v/P+/55mZAWNsDIwxHuNAVR0Zr1DTCv2pSujD/6exv9Dtbdn/APqJSWMJ6DUWjARU7sgOXEoXXmBxi+26jG1J7wz21QGagi+IY4zleNYCVNgkdGcmrXW4UwcoYq5gawo+hQMtAK3Ew6TzHTPwqy7QetxMwZ8wt5ycCXcEx1LudWwu61RtjBPwHnNSUgDeygQp0h50bnJ1OtmNc02AIjZaVewT0cLtowAK34R/ikLMxuemQMvwNCX9wCzEMWds6SzxaykxNFf0ilS1rIh/jkXpJJbs2xwabMCqlHui48fDuUAHcTITYri03+kGX+UChak/lno/WrauzbCph4r421ibTh7hRgbVV9zDY0SVhoy6HorEnbiYFN5gfgZQZUoToGlpiU5Oqmtwv3KGhgFNgEL6PHalOT50qnQV3xrOeRfxG3Y0BZqHl6UHbkOWf+Hx2DjaFlDobEyb2/Qcmn4ABcfUjn/itWFJ+W2vJmCrLas5Z35YUw+VZxpMBo/HyN4R3gLqxHTR5wLFSosVV4ww+sKeutSJGVLKXKBDOF5S6/pySNfrxLQGtBRPMDEpnsWeHvU6Ma0BhVBMuAnvcGEEG9eJacVD+cuoIjPXQ+NAfatAlfBfwb5ZJVsSrL8AAAAASUVORK5CYII="/>
-                    </button>
-                </article>
-
-                <article class="products__card">
-                    <img src="product3.png" alt="" class="shop-item-image">
-
-                    <h3 class="shop-item-title">Dosa</h3>
-                    <span class="shop-item-price">$12.99</span>
-
-                    <button class="button">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAilJREFUWEft10uoDmEcx/HPiVzKJQsWFnaEKJRYWBILJUu5ZSE7RewQsVJieySXXNY2SliwkJLbilyyc0nKBim5vH89U/O+55xm5jnz5izOU2/TzPv//57v/P+/55mZAWNsDIwxHuNAVR0Zr1DTCv2pSujD/6exv9Dtbdn/APqJSWMJ6DUWjARU7sgOXEoXXmBxi+26jG1J7wz21QGagi+IY4zleNYCVNgkdGcmrXW4UwcoYq5gawo+hQMtAK3Ew6TzHTPwqy7QetxMwZ8wt5ycCXcEx1LudWwu61RtjBPwHnNSUgDeygQp0h50bnJ1OtmNc02AIjZaVewT0cLtowAK34R/ikLMxuemQMvwNCX9wCzEMWds6SzxaykxNFf0ilS1rIh/jkXpJJbs2xwabMCqlHui48fDuUAHcTITYri03+kGX+UChak/lno/WrauzbCph4r421ibTh7hRgbVV9zDY0SVhoy6HorEnbiYFN5gfgZQZUoToGlpiU5Oqmtwv3KGhgFNgEL6PHalOT50qnQV3xrOeRfxG3Y0BZqHl6UHbkOWf+Hx2DjaFlDobEyb2/Qcmn4ABcfUjn/itWFJ+W2vJmCrLas5Z35YUw+VZxpMBo/HyN4R3gLqxHTR5wLFSosVV4ww+sKeutSJGVLKXKBDOF5S6/pySNfrxLQGtBRPMDEpnsWeHvU6Ma0BhVBMuAnvcGEEG9eJacVD+cuoIjPXQ+NAfatAlfBfwb5ZJVsSrL8AAAAASUVORK5CYII="/>
-                    </button>
-                </article>
-
-                <article class="products__card">
-                    <img src="product4.png" alt="" class="shop-item-image">
-                    <h3 class="shop-item-title">Gobi Manchurian</h3>
-                    <span class="shop-item-price">$14.99</span>
-
-                    <button class="button">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAilJREFUWEft10uoDmEcx/HPiVzKJQsWFnaEKJRYWBILJUu5ZSE7RewQsVJieySXXNY2SliwkJLbilyyc0nKBim5vH89U/O+55xm5jnz5izOU2/TzPv//57v/P+/55mZAWNsDIwxHuNAVR0Zr1DTCv2pSujD/6exv9Dtbdn/APqJSWMJ6DUWjARU7sgOXEoXXmBxi+26jG1J7wz21QGagi+IY4zleNYCVNgkdGcmrXW4UwcoYq5gawo+hQMtAK3Ew6TzHTPwqy7QetxMwZ8wt5ycCXcEx1LudWwu61RtjBPwHnNSUgDeygQp0h50bnJ1OtmNc02AIjZaVewT0cLtowAK34R/ikLMxuemQMvwNCX9wCzEMWds6SzxaykxNFf0ilS1rIh/jkXpJJbs2xwabMCqlHui48fDuUAHcTITYri03+kGX+UChak/lno/WrauzbCph4r421ibTh7hRgbVV9zDY0SVhoy6HorEnbiYFN5gfgZQZUoToGlpiU5Oqmtwv3KGhgFNgEL6PHalOT50qnQV3xrOeRfxG3Y0BZqHl6UHbkOWf+Hx2DjaFlDobEyb2/Qcmn4ABcfUjn/itWFJ+W2vJmCrLas5Z35YUw+VZxpMBo/HyN4R3gLqxHTR5wLFSosVV4ww+sKeutSJGVLKXKBDOF5S6/pySNfrxLQGtBRPMDEpnsWeHvU6Ma0BhVBMuAnvcGEEG9eJacVD+cuoIjPXQ+NAfatAlfBfwb5ZJVsSrL8AAAAASUVORK5CYII="/>
-                    </button>
-                </article>
-
-                <article class="products__card">
-                    <img src="product5.png" alt="" class="shop-item-image">
-
-                    <h3 class="shop-item-title">Veggie Fried Rice</h3>
-                    <span class="shop-item-price">$9.99</span>
-
-                    <button class="button">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAilJREFUWEft10uoDmEcx/HPiVzKJQsWFnaEKJRYWBILJUu5ZSE7RewQsVJieySXXNY2SliwkJLbilyyc0nKBim5vH89U/O+55xm5jnz5izOU2/TzPv//57v/P+/55mZAWNsDIwxHuNAVR0Zr1DTCv2pSujD/6exv9Dtbdn/APqJSWMJ6DUWjARU7sgOXEoXXmBxi+26jG1J7wz21QGagi+IY4zleNYCVNgkdGcmrXW4UwcoYq5gawo+hQMtAK3Ew6TzHTPwqy7QetxMwZ8wt5ycCXcEx1LudWwu61RtjBPwHnNSUgDeygQp0h50bnJ1OtmNc02AIjZaVewT0cLtowAK34R/ikLMxuemQMvwNCX9wCzEMWds6SzxaykxNFf0ilS1rIh/jkXpJJbs2xwabMCqlHui48fDuUAHcTITYri03+kGX+UChak/lno/WrauzbCph4r421ibTh7hRgbVV9zDY0SVhoy6HorEnbiYFN5gfgZQZUoToGlpiU5Oqmtwv3KGhgFNgEL6PHalOT50qnQV3xrOeRfxG3Y0BZqHl6UHbkOWf+Hx2DjaFlDobEyb2/Qcmn4ABcfUjn/itWFJ+W2vJmCrLas5Z35YUw+VZxpMBo/HyN4R3gLqxHTR5wLFSosVV4ww+sKeutSJGVLKXKBDOF5S6/pySNfrxLQGtBRPMDEpnsWeHvU6Ma0BhVBMuAnvcGEEG9eJacVD+cuoIjPXQ+NAfatAlfBfwb5ZJVsSrL8AAAAASUVORK5CYII="/>
-                    </button>
-                </article>
-                <article class="products__card">
-                    <img src="product6.png" alt="" class="shop-item-image">
-
-                    <h3 class="shop-item-title">Aloo Paratha</h3>
-                    <span class="shop-item-price">$9.99</span>
-
-                    <button class="button">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAilJREFUWEft10uoDmEcx/HPiVzKJQsWFnaEKJRYWBILJUu5ZSE7RewQsVJieySXXNY2SliwkJLbilyyc0nKBim5vH89U/O+55xm5jnz5izOU2/TzPv//57v/P+/55mZAWNsDIwxHuNAVR0Zr1DTCv2pSujD/6exv9Dtbdn/APqJSWMJ6DUWjARU7sgOXEoXXmBxi+26jG1J7wz21QGagi+IY4zleNYCVNgkdGcmrXW4UwcoYq5gawo+hQMtAK3Ew6TzHTPwqy7QetxMwZ8wt5ycCXcEx1LudWwu61RtjBPwHnNSUgDeygQp0h50bnJ1OtmNc02AIjZaVewT0cLtowAK34R/ikLMxuemQMvwNCX9wCzEMWds6SzxaykxNFf0ilS1rIh/jkXpJJbs2xwabMCqlHui48fDuUAHcTITYri03+kGX+UChak/lno/WrauzbCph4r421ibTh7hRgbVV9zDY0SVhoy6HorEnbiYFN5gfgZQZUoToGlpiU5Oqmtwv3KGhgFNgEL6PHalOT50qnQV3xrOeRfxG3Y0BZqHl6UHbkOWf+Hx2DjaFlDobEyb2/Qcmn4ABcfUjn/itWFJ+W2vJmCrLas5Z35YUw+VZxpMBo/HyN4R3gLqxHTR5wLFSosVV4ww+sKeutSJGVLKXKBDOF5S6/pySNfrxLQGtBRPMDEpnsWeHvU6Ma0BhVBMuAnvcGEEG9eJacVD+cuoIjPXQ+NAfatAlfBfwb5ZJVsSrL8AAAAASUVORK5CYII="/>
-                    </button>
-                </article>
-            </div>
-        </section>
-        <!--==================== DRINKS ====================-->
-        <section class="new section container" id="new">
-            <h2 class="section__title">
-                Drinks
-            </h2>
-            
-            <div class="new__container">
-                <div class="swiper new-swiper">
-                    <div class="swiper-wrapper">
-                        <article class="new__card swiper-slide">
-                            <div class="shop-item">
-                            <span class="new__tag">Cow Free</span>
-    
-                            <img src="featured2.png" alt="" class="shop-item-image">
-    
-                            <div class="new__data">
-                                <h3 class="shop-item-title">Mango Lassi</h3>
-                                <span class="shop-item-price">$3.99</span>
-                            </div>
-                            <button class="button shop-item-button">ADD TO CART</button>
-                        </div>
-                        </article>
-
-                        <article class="new__card swiper-slide">
-                            <span class="new__tag">Cow Free</span>
-                            <div class="shop-item">
-                            <img src="new2.png" alt="" class="shop-item-image">
-    
-                            <div class="new__data">
-                                <h3 class="shop-item-title">Masala Chass</h3>
-                                <span class="shop-item-price">$1.99</span>
-                            </div>
-    
-                            <button class="button shop-item-button">ADD TO CART</button>
-                        </div>
-                        </article>
-
-                        <article class="new__card swiper-slide">
-                            <div class="shop-item">
-                            <span class="new__tag">Cow Free</span>
-    
-                            <img src="new3.png" alt="" class="shop-item-image">
-    
-                            <div class="new__data">
-                                <h3 class="shop-item-title">Chai</h3>
-                                <span class="shop-item-price">$1.99</span>
-                               </div>
-                              <button class="button shop-item-button">ADD TO CART</button>
-                        </div>
-                        </article>
-                  
-                    </div>
+                <div class="home__data">
+                    <h1 class="home__title">Saffron <br> Leaf</h1>
+                    <p class="home__description">
+                        Vegetarian and vegan food, made with love and care, just for you.
+                    </p>
                 </div>
             </div>
         </section>
-        <section class="container content-section" id="cart-section">
-            <h2 class="section-header">CART</h2>
-            <div class="cart-row">
-                <span class="cart-item cart-header cart-column">ITEM</span>
-                <span class="cart-price cart-header cart-column">PRICE</span>
-                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+
+        <!--==================== Weekly Special ====================-->
+        <section class="featured section container" id="featured">
+            <h2 class="section__title">
+                Weekly Special
+            </h2>
+            <div class="featured__container grid">
+                <article class="new__card swiper-slide">
+                    <div class="shop-item">
+                    <span class="featured__tag">10% off</span>
+
+                    <img src="featured1.png" alt="" class="shop-item-image">
+
+                    <div class="new__data">
+                        <h3 class="shop-item-title">Samosas</h3>
+                        <span class="shop-item-price">$4.99</span>
+                    </div>
+                    
+                    <button class="button shop-item-button">ADD TO CART</button>
+                    </div>
+                </article>
+                <article class="new__card swiper-slide">
+                    <span class="featured__tag">10% off</span>
+
+                    <img src="featured2.png" alt="" class="featured__img">
+
+                    <div class="new__data">
+                        <h3 class="new__title">Mango Lassi</h3>
+                        <span class="new__price">$3.99</span>
+                    </div>
+
+                    <button class="button shop-item-button">ADD TO CART</button>
+                    
+                </article>
+                <article class="new__card swiper-slide">
+                    <span class="featured__tag">10% off</span>
+
+                    <img src="featured33.png" alt="" class="featured__img">
+
+                    <div class="new__data">
+                        <h3 class="new__title">Panner Tikka</h3>
+                        <span class="new__price">$9.99</span>
+                    </div>
+
+                    <button class="button shop-item-button">ADD TO CART</button>
+                    
+                </article>
             </div>
-            <div class="cart-items">
-            </div>
-            <div class="cart-total">
-                <strong class="cart-total-title">Total</strong>
-                <span class="cart-total-price">$0</span>
-            </div>
-            <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
         </section>
     <!--=============== MAIN JS ===============-->
     <script src="main.js"></script>
     <script src="shop.js"></script>
-    <style>
-    .button {
-    padding: 8px; /* Adjust the padding as needed */
-    border: none; /* Remove any default border */
-    background-color: transparent; /* Make the background transparent */
-    position: absolute; /* Position the button absolutely */
-    top: 10px; /* Adjust the top position as needed */
-    left: 10px; /* Adjust the right position as needed */
-}
 
-/* Ensure the container has a relative position */
-.shop-item {
-    position: relative;
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-    .cart-item-image {
-        width: 40px; /* Adjust the size as needed */
-        height: auto;
-    }
-
-    .cart-item-title {
-        font-size: 0.6rem; /* Adjust the size as needed */
-    }
-
-    .cart-price {
-        font-size: 0.6rem; /* Adjust the size as needed */
-    }
-}
-    </style>
 </body>
 </html>
 
         <br>
-        <!--=============== Extra Info/Contact/License information ===============-->
-        <footer class="footer section">
-            <section class="contact section container" id="contact">
-                <div class="contact__container">
-                    <div class="contact__info">
-                        <h2 class="section__title">Saffron Leaf Co.</h2>
-                        
-            <div className="container mx-auto p-4">
-                <div className="section mb-4">
-                <p className="text-lg text-gray-600">Welcome to Saffron Leaf, where we bring the flavors of India to your plate with a vegan/vegetarian twist. Our mission is to provide you with delicious, nutritious, and authentic Indian cuisine that is both healthy and sustainable.</p>
-                <p className="text-lg text-gray-600"><strong>Cuisine Type:</strong> Vegan Indian</p>
-            </div>
-
-            <br>
-            <div className="section mb-4">
-                <h2 className="text-2xl font-bold text-gray-900">License Information</h2>
-                <p className="text-lg text-gray-600"><strong>License Number:</strong> XYZ123456</p>
-                <p className="text-lg text-gray-600"><strong>Issuing Authority:</strong> Department of Health</p>
-                <p className="text-lg text-gray-600"><strong>Issue Date:</strong> January 1, 2023</p>
-                <p className="text-lg text-gray-600"><strong>Expiration Date:</strong> December 31, 2025</p>
-            </div>
-        </footer>
-        <footer class="footer">
-            <p>Thank you</p>
-        </footer>  
-</body>
-</html>
+                <!--=============== Extra Info/Contact/License information ===============-->
+                <footer class="footer section">
+                    <section class="contact section container" id="contact">
+                        <div class="contact__container">
+                            <div class="contact__info">
+                                <h2 class="section__title">Saffron Leaf Co.</h2>
+                                
+                    <div className="container mx-auto p-4">
+                        <div className="section mb-4">
+                        <p className="text-lg text-gray-600">Welcome to Saffron Leaf, where we bring the flavors of India to your plate with a vegan/vegetarian twist. Our mission is to provide you with delicious, nutritious, and authentic Indian cuisine that is both healthy and sustainable.</p>
+                        <p className="text-lg text-gray-600"><strong>Cuisine Type:</strong> Vegan Indian</p>
+                    </div>
+            
+                    <br>
+                    <div className="section mb-4">
+                        <h2 className="text-2xl font-bold text-gray-900">License Information</h2>
+                        <p className="text-lg text-gray-600"><strong>License Number:</strong> XYZ123456</p>
+                        <p className="text-lg text-gray-600"><strong>Issuing Authority:</strong> Department of Health</p>
+                        <p className="text-lg text-gray-600"><strong>Issue Date:</strong> January 1, 2023</p>
+                        <p className="text-lg text-gray-600"><strong>Expiration Date:</strong> December 31, 2025</p>
+                    </div>
+                </footer>
+                <footer class="footer">
+                    <p>Thank you</p>
+                </footer>  
+        </body>
+        </html>
