@@ -35,21 +35,20 @@ function ready() {
 }
 
 function purchaseClicked() {
-    const toastTrigger = document.getElementsByClassName('btn-purchase')[0]
-    const toastLiveExample = document.getElementById('liveToast')
-
-    if (toastTrigger) {
-        const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
-        toastTrigger.addEventListener('click', () => {
-        toastBootstrap.show()
-        })
-    }
+    var cartItems = document.getElementsByClassName('cart-items')[0];
+    var hasItems = Array.from(cartItems.childNodes).some(node => node.nodeType === Node.ELEMENT_NODE);
     
-    var cartItems = document.getElementsByClassName('cart-items')[0]
-    while (cartItems.hasChildNodes()) {
-        cartItems.removeChild(cartItems.firstChild)
+    if (hasItems) {
+        var purchaseModal = new bootstrap.Modal(document.getElementById('purchaseModal'));
+        purchaseModal.show();
+        while (cartItems.hasChildNodes()) {
+            cartItems.removeChild(cartItems.firstChild);
+        }
+        updateCartTotal();
+    } else {
+        var emptyCartModal = new bootstrap.Modal(document.getElementById('emptyCartModal'));
+        emptyCartModal.show();
     }
-    updateCartTotal()
 }
 
 function removeCartItem(event) {

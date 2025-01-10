@@ -170,6 +170,7 @@ button {
 }
 
 .nav__logo {
+  font-family: 'Libre Baskerville', serif;
   text-transform: uppercase;
   font-weight: var(--font-bold);
   letter-spacing: 1px;
@@ -329,6 +330,7 @@ button {
 }
 
 .home__title {
+  font-family: 'Libre Baskerville', serif;
   font-size: var(--biggest-font-size);
   font-weight: var(--font-bold);
   margin-bottom: var(--mb-1);
