@@ -499,6 +499,7 @@ button {
   border: 1px solid var(--border-color);
   text-align: center;
   transition: .3s;
+  margin: 10px
 }
 .products__card:hover .button {
   background-color:white;
@@ -562,6 +563,7 @@ button {
   border: 1px solid var(--border-color);
   overflow-y: hidden;
   transition: .3s;
+  padding-bottom: 2rem;
 }
  
 .new__tag {

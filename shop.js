@@ -35,7 +35,16 @@ function ready() {
 }
 
 function purchaseClicked() {
-    alert('Thank you for your purchase')
+    const toastTrigger = document.getElementsByClassName('btn-purchase')[0]
+    const toastLiveExample = document.getElementById('liveToast')
+
+    if (toastTrigger) {
+        const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+        toastTrigger.addEventListener('click', () => {
+        toastBootstrap.show()
+        })
+    }
+    
     var cartItems = document.getElementsByClassName('cart-items')[0]
     while (cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild)
@@ -86,7 +95,7 @@ function addItemToCart(title, price, imageSrc, quantity) {
         <span class="cart-price cart-column">${price}</span>
         <div class="cart-quantity cart-column">
             <input class="cart-quantity-input" type="number" value="${quantity}">
-            <button class="btn btn-danger" type="button">REMOVE</button>
+            <button class="btn btn-danger" type="button" style="padding: 5px">REMOVE</button>
         </div>`
     cartRow.innerHTML = cartRowContents
     cartItems.append(cartRow)
