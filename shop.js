@@ -1,5 +1,28 @@
 if (document.readyState == 'loading') {
-    document.addEventListener('DOMContentLoaded', ready)
+    document.addEventListener('DOMContentLoaded', function() {
+        function updateContainerClasses() {
+            var navbar = document.getElementById('navbar');
+            var cartSection = document.getElementById('cart-section');
+            
+            if (window.innerWidth <= 767) {
+                navbar.classList.remove('container');
+                navbar.classList.add('container-fluid');
+                cartSection.classList.remove('container');
+                cartSection.classList.add('container-fluid');
+            } else {
+                navbar.classList.remove('container-fluid');
+                navbar.classList.add('container');
+                cartSection.classList.remove('container-fluid');
+                cartSection.classList.add('container');
+            }
+        }
+    
+        // Initial check
+        updateContainerClasses();
+    
+        // Update on resize
+        window.addEventListener('resize', updateContainerClasses);
+    });
 } else {
     ready()
 }
