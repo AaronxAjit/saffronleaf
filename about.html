@@ -3,12 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saffron Leaf</title>
+    <style>
+        /* Add keyframes for animations */
+        @keyframes slideInX {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
 
+        @keyframes slideInY {
+            from {
+                opacity: 0;
+                transform: translateY(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Apply animations to about section */
+        .about__content {
+            animation: slideInX 0.5s ease-out forwards;
+        }
+
+        .about__image {
+            animation: slideInY 0.5s ease-out forwards;
+        }
+
+        .about__content, .about__image {
+            transition: transform 0.3s;
+        }
+
+        .about__content:hover, .about__image:hover {
+            transform: scale(1.05);
+        }
+    </style>
     <!--=============== BOXICONS ===============-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="styles.css">
-    <title>Saffron Leaf</title>
+
+    <!--=============== Font ==================-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playwrite+AU+SA&display=swap" rel="stylesheet">
 </head>
 <body>
     <!--==================== HEADER ====================-->
@@ -21,13 +66,13 @@
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item">
-                        <a href="index.html" class="nav__link active-link">Home</a>
+                        <a href="index.html" class="nav__link">Home</a>
                     </li>
                     <li class="nav__item">
                         <a href="menu.html" class="nav__link">Menu</a>
                     </li>
                     <li class="nav__item">
-                        <a href="about.html" class="nav__link">About</a>
+                        <a href="about.html" class="nav__link active-link">About</a>
                     </li>
                     <li class="nav__item">
                         <a href="menu.html#cart-section" class="nav__link">Cart</a>
@@ -51,7 +96,7 @@
         <!--==================== About ====================-->
         <section class="story section container">
             <div class="story__container grid">
-                <div class="story__data">
+                <div class="story__data about__content">
                     <h2 class="section__title story__section-title">
                         About
                     </h2>
@@ -61,7 +106,7 @@
                     </p>
                 </div>
 
-                <div class="story__images">
+                <div class="story__images about__image">
                     <img src="story.png" alt="" class="story__img">
                     <div class="story__square"></div>
                 </div>
