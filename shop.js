@@ -22,6 +22,7 @@ if (document.readyState == 'loading') {
     
         // Update on resize
         window.addEventListener('resize', updateContainerClasses);
+        ready()
     });
 } else {
     ready()
