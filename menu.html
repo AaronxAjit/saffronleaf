@@ -9,51 +9,8 @@
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="styles.css">
     <style>
-        
-        @keyframes appear {
-            from {
-                opacity: 0;
-                transform: scale(0.5);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-
-        .content {
-            opacity: 0;
-            transform: scale(0.5);
-            animation: appear 0.5s ease-out forwards;
-        }
-
-        .featured {
-            padding: 60px 0;
-            background-color: #dbdbdb;
-        }
-
-
-
-        .featured__container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
 
         .products__card {
-            background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
@@ -107,16 +64,6 @@
             animation: fadein 0.5s, fadeout 0.5s 2.5s;
         }
 
-        @keyframes fadein {
-            from {bottom: 0; opacity: 0;}
-            to {bottom: 30px; opacity: 1;}
-        }
-
-        @keyframes fadeout {
-            from {bottom: 30px; opacity: 1;}
-            to {bottom: 0; opacity: 0;}
-        }
-
         /* Mobile styles */
         @media (max-width: 768px) {
             .section__title {
@@ -133,7 +80,7 @@
                 font-size: 0.6rem; /* Adjust the size as needed */
             }
 
-            .cart-price {
+            .cart-item-price {
                 font-size: 0.6rem; /* Adjust the size as needed */
             }
         }
@@ -255,58 +202,39 @@
             </div>
         </section>
         <!--==================== DRINKS ====================-->
-        <section class="new section container" id="new">
-            <h2 class="section__title">
-                Drinks
-            </h2>
-            
-            <div class="new__container">
-                <div class="swiper new-swiper">
-                    <div class="swiper-wrapper">
-                        <article class="new__card swiper-slide">
-                            <div class="shop-item">
-                            <span class="new__tag">Cow Free</span>
-    
-                            <img src="featured2.png" alt="" class="shop-item-image">
-    
-                            <div class="new__data">
-                                <h3 class="shop-item-title">Mango Lassi</h3>
-                                <span class="shop-item-price">$3.99</span>
-                            </div>
-                            <button class="button shop-item-button">ADD TO CART</button>
-                        </div>
-                        </article>
-
-                        <article class="new__card swiper-slide">
-                            <span class="new__tag">Cow Free</span>
-                            <div class="shop-item">
-                            <img src="new2.png" alt="" class="shop-item-image">
-    
-                            <div class="new__data">
-                                <h3 class="shop-item-title">Masala Chass</h3>
-                                <span class="shop-item-price">$1.99</span>
-                            </div>
-    
-                            <button class="button shop-item-button">ADD TO CART</button>
-                        </div>
-                        </article>
-
-                        <article class="new__card swiper-slide">
-                            <div class="shop-item">
-                            <span class="new__tag">Cow Free</span>
-    
-                            <img src="new3.png" alt="" class="shop-item-image">
-    
-                            <div class="new__data">
-                                <h3 class="shop-item-title">Chai</h3>
-                                <span class="shop-item-price">$1.99</span>
-                               </div>
-                              <button class="button shop-item-button">ADD TO CART</button>
-                        </div>
-                        </article>
-                  
+        <section class="featured section container" id="drinks">
+            <h2 class="section__title">Drinks</h2>
+            <div class="featured__container grid">
+                <article class="products__card shop-item">
+                    <img src="featured1.png" alt="" class="shop-item-image">
+                    <div class="new__data">
+                        <h4 class="shop-item-title">Mango Lassi</h4>
+                        <span class="shop-item-price">$3.99</span>
                     </div>
-                </div>
+                    <button class="button">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAilJREFUWEft10uoDmEcx/HPiVzKJQsWFnaEKJRYWBILJUu5ZSE7RewQsVJieySXXNY2SliwkJLbilyyc0nKBim5vH89U/O+55xm5jnz5izOU2/TzPv//57v/P+/55mZAWNsDIwxHuNAVR0Zr1DTCv2pSujD/6exv9Dtbdn/APqJSWMJ6DUWjARU7sgOXEoXXmBxi+26jG1J7wz21QGagi+IY4zleNYCVNgkdGcmrXW4UwcoYq5gawo+hQMtAK3Ew6TzHTPwqy7QetxMwZ8wt5ycCXcEx1LudWwu61RtjBPwHnNSUgDeygQp0h50bnJ1OtmNc02AIjZaVewT0cLtowAK34R/ikLMxuemQMvwNCX9wCzEMWds6SzxaykxNFf0ilS1rIh/jkXpJJbs2xwabMCqlHui48fDuUAHcTITYri03+kGX+UChak/lno/WrauzbCph4r421ibTh7hRgbVV9zDY0SVhoy6HorEnbiYFN5gfgZQZUoToGlpiU5Oqmtwv3KGhgFNgEL6PHalOT50qnQV3xrOeRfxG3Y0BZqHl6UHbkOWf+Hx2DjaFlDobEyb2/Qcmn4ABcfUjn/itWFJ+W2vJmCrLas5Z35YUw+VZxpMBo/HyN4R3gLqxHTR5wLFSosVV4ww+sKeutSJGVLKXKBDOF5S6/pySNfrxLQGtBRPMDEpnsWeHvU6Ma0BhVBMuAnvcGEEG9eJacVD+cuoIjPXQ+NAfatAlfBfwb5ZJVsSrL8AAAAASUVORK5CYII="/>
+                    </button>
+                </article>
+                <article class="products__card shop-item">
+                    <img src="new2.png" alt="" class="shop-item-image">
+                    <div class="new__data">
+                        <h4 class="shop-item-title">Masala Chass</h4>
+                        <span class="shop-item-price">$1.99</span>
+                    </div>
+                    <button class="button">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAilJREFUWEft10uoDmEcx/HPiVzKJQsWFnaEKJRYWBILJUu5ZSE7RewQsVJieySXXNY2SliwkJLbilyyc0nKBim5vH89U/O+55xm5jnz5izOU2/TzPv//57v/P+/55mZAWNsDIwxHuNAVR0Zr1DTCv2pSujD/6exv9Dtbdn/APqJSWMJ6DUWjARU7sgOXEoXXmBxi+26jG1J7wz21QGagi+IY4zleNYCVNgkdGcmrXW4UwcoYq5gawo+hQMtAK3Ew6TzHTPwqy7QetxMwZ8wt5ycCXcEx1LudWwu61RtjBPwHnNSUgDeygQp0h50bnJ1OtmNc02AIjZaVewT0cLtowAK34R/ikLMxuemQMvwNCX9wCzEMWds6SzxaykxNFf0ilS1rIh/jkXpJJbs2xwabMCqlHui48fDuUAHcTITYri03+kGX+UChak/lno/WrauzbCph4r421ibTh7hRgbVV9zDY0SVhoy6HorEnbiYFN5gfgZQZUoToGlpiU5Oqmtwv3KGhgFNgEL6PHalOT50qnQV3xrOeRfxG3Y0BZqHl6UHbkOWf+Hx2DjaFlDobEyb2/Qcmn4ABcfUjn/itWFJ+W2vJmCrLas5Z35YUw+VZxpMBo/HyN4R3gLqxHTR5wLFSosVV4ww+sKeutSJGVLKXKBDOF5S6/pySNfrxLQGtBRPMDEpnsWeHvU6Ma0BhVBMuAnvcGEEG9eJacVD+cuoIjPXQ+NAfatAlfBfwb5ZJVsSrL8AAAAASUVORK5CYII="/>
+                    </button>
+                </article>
+                <article class="products__card shop-item">
+                    <img src="new3.png" alt="" class="shop-item-image">
+                    <div class="new__data">
+                        <h4 class="shop-item-title">Chai</h4>
+                        <span class="shop-item-price">$1.99</span>
+                    </div>
+                    <button class="button">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAilJREFUWEft10uoDmEcx/HPiVzKJQsWFnaEKJRYWBILJUu5ZSE7RewQsVJieySXXNY2SliwkJLbilyyc0nKBim5vH89U/O+55xm5jnz5izOU2/TzPv//57v/P+/55mZAWNsDIwxHuNAVR0Zr1DTCv2pSujD/6exv9Dtbdn/APqJSWMJ6DUWjARU7sgOXEoXXmBxi+26jG1J7wz21QGagi+IY4zleNYCVNgkdGcmrXW4UwcoYq5gawo+hQMtAK3Ew6TzHTPwqy7QetxMwZ8wt5ycCXcEx1LudWwu61RtjBPwHnNSUgDeygQp0h50bnJ1OtmNc02AIjZaVewT0cLtowAK34R/ikLMxuemQMvwNCX9wCzEMWds6SzxaykxNFf0ilS1rIh/jkXpJJbs2xwabMCqlHui48fDuUAHcTITYri03+kGX+UChak/lno/WrauzbCph4r421ibTh7hRgbVV9zDY0SVhoy6HorEnbiYFN5gfgZQZUoToGlpiU5Oqmtwv3KGhgFNgEL6PHalOT50qnQV3xrOeRfxG3Y0BZqHl6UHbkOWf+Hx2DjaFlDobEyb2/Qcmn4ABcfUjn/itWFJ+W2vJmCrLas5Z35YUw+VZxpMBo/HyN4R3gLqxHTR5wLFSosVV4ww+sKeutSJGVLKXKBDOF5S6/pySNfrxLQGtBRPMDEpnsWeHvU6Ma0BhVBMuAnvcGEEG9eJacVD+cuoIjPXQ+NAfatAlfBfwb5ZJVsSrL8AAAAASUVORK5CYII="/>
+                    </button>
+                </article>
             </div>
         </section>
         <section class="container content-section" id="cart-section">
