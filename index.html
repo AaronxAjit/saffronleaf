@@ -115,7 +115,7 @@
             box-shadow: 0 1px 4px hsla(0, 4%, 15%, .10);
         }
         .nav {
-            background-color: rgba(93, 0, 0, 0.868); /* Background color */
+            background-color: rgba(93, 0, 0, 1); /* Background color */
             width: 100%; /* Ensure it spans the entire width */
             padding: 0 40px; /* Add padding to the left and right */
             display: flex; /* Use flexbox for layout */
@@ -174,12 +174,14 @@
 
         .home__description {
             font-family: 'Libre Baskerville', serif; /* Same font as home title */
-            font-size: 28px; /* Increase font size */
+            font-size: 22px; /* Increase font size */
             margin-bottom: 30px; /* Add space below */
         }
 
         .home__img-bg {
-            position: relative;
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100vh;
             overflow: hidden;
@@ -245,8 +247,11 @@
         @media screen and (max-width: 767px) {
             .home__img-bg {
                 width: 100%; /* Make the width 100% */
-                height: 100vh; /* Fill 45% of the screen height */
+                height: 100vh; /* Fill 100% of the screen height */
             }
+            .nav__item::after {
+                display: none; /* Remove lines after navlink for mobile UI */
+            }           
         }
 
         @media screen and (min-width: 2880px) {
@@ -268,6 +273,11 @@
 
             .shop-item-price {
                 font-size: 26px; /* Further increase font size for larger screens */
+            }
+
+            .home__img-bg {
+                width: 100%; /* Ensure it spans the entire width */
+                height: 100vh; /* Ensure it spans the entire height */
             }
         }
 
