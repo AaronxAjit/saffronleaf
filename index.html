@@ -305,6 +305,12 @@
             opacity: 1;
             transform: none;
         }
+        video {
+            object-fit: cover;
+            width: 100%;
+            height: auto;
+        }
+
     </style>
     <!--=============== BOXICONS ===============-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
@@ -469,6 +475,12 @@
         window.addEventListener('load', function() {
             window.scrollTo(0, 0);
         });
+        document.addEventListener("DOMContentLoaded", function () {
+            let video = document.querySelector("video");
+            video.muted = true; // Ensure video is muted for autoplay
+            video.play().catch(error => console.log("Autoplay failed:", error));
+        });
+
     </script>
     <br>
     <!--=============== Extra Info/Contact/License information ===============-->
