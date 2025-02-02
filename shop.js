@@ -34,9 +34,7 @@ function ready() {
     loadCart()
 }
 
-// Function to show toast messages
 function showToast(message) {
-    // Check if a toast is already visible
     if (document.querySelector('.toast.show')) {
         return;
     }
@@ -54,7 +52,6 @@ function showToast(message) {
     }, 3000);
 }
 
-// Function to handle purchase
 function purchaseClicked() {
     var cartItems = document.getElementsByClassName('cart-items')[0];
     if (!cartItems.hasChildNodes()) {
@@ -68,7 +65,6 @@ function purchaseClicked() {
     showToast('Purchase successful!');
 }
 
-// Function to handle adding items to the cart
 function addToCartClicked(event) {
     var button = event.target;
     var shopItem = button.parentElement.parentElement;
@@ -78,20 +74,22 @@ function addToCartClicked(event) {
     addItemToCart(title, price, imageSrc, true);
 }
 
-// Function to add item to the cart
 function addItemToCart(title, price, imageSrc, showToastMessage) {
-    var cartRow = document.createElement('div');
-    cartRow.classList.add('cart-row');
     var cartItems = document.getElementsByClassName('cart-items')[0];
     var cartItemNames = cartItems.getElementsByClassName('cart-item-title');
     for (var i = 0; i < cartItemNames.length; i++) {
         if (cartItemNames[i].innerText == title) {
+            var quantityElement = cartItemNames[i].parentElement.parentElement.getElementsByClassName('cart-quantity-input')[0];
+            quantityElement.value = parseInt(quantityElement.value) + 1;
+            updateCartTotal();
             if (showToastMessage) {
-                showToast('This item is already added to the cart');
+                showToast('Item added to cart');
             }
             return;
         }
     }
+    var cartRow = document.createElement('div');
+    cartRow.classList.add('cart-row');
     var cartRowContents = `
         <div class="cart-item cart-column">
             <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
@@ -112,7 +110,6 @@ function addItemToCart(title, price, imageSrc, showToastMessage) {
     }
 }
 
-// Function to remove cart item
 function removeCartItem(event) {
     var buttonClicked = event.target;
     buttonClicked.parentElement.parentElement.remove();
@@ -120,7 +117,6 @@ function removeCartItem(event) {
     showToast('Item removed from cart');
 }
 
-// Function to handle quantity change
 function quantityChanged(event) {
     var input = event.target;
     if (isNaN(input.value) || input.value <= 0) {
@@ -129,7 +125,6 @@ function quantityChanged(event) {
     updateCartTotal();
 }
 
-// Add event listeners for the add to cart buttons and purchase button
 var addToCartButtons = document.getElementsByClassName('button');
 for (var i = 0; i < addToCartButtons.length; i++) {
     var button = addToCartButtons[i];
