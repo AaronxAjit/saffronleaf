@@ -272,6 +272,17 @@
             text-decoration: none;
             cursor: pointer;
         }
+
+        .products__container--center {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .products__card {
+            flex: 1; /* Ensure both cards take up equal space */
+            max-width: 300px; /* Set a maximum width for the cards */
+        }
     </style>
     <!--=============== Font ==================-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -323,7 +334,7 @@
                 Appetizers
             </h2>
 
-            <div class="products__container grid">
+            <div class="products__container products__container--center">
                 <article class="products__card" onclick="showIngredients('Paneer Tikka', 'featured33.png', 'Fried paneer with onions and bell peppers on a stick.', ['Paneer', 'Bell Peppers', 'Onions', 'Spices'], 200)">
                     <img src="featured33.png" alt="" class="shop-item-image">
 
