@@ -72,6 +72,7 @@
             padding: 20px;
             text-align: center;
             transition: transform 0.3s;
+            cursor: pointer; /* Add cursor pointer */
         }
 
         .products__card:hover {
@@ -166,15 +167,15 @@
             text-shadow: 2px 2px 4px rgba(65, 0, 0, 0.758); /* Add shadow for 3D effect */
         }
         .home__title {
-            font-size: 48px; /* Increase font size */
+            font-size: 64px; /* Increase font size */
             font-weight: bold; /* Make text bold */
-            margin-bottom: 20px; /* Add space below */
+            margin-bottom: 30px; /* Add space below */
         }
 
         .home__description {
             font-family: 'Libre Baskerville', serif; /* Same font as home title */
-            font-size: 22px; /* Increase font size */
-            margin-bottom: 20px; /* Add space below */
+            font-size: 28px; /* Increase font size */
+            margin-bottom: 30px; /* Add space below */
         }
 
         .home__img-bg {
@@ -244,7 +245,29 @@
         @media screen and (max-width: 767px) {
             .home__img-bg {
                 width: 100%; /* Make the width 100% */
-                height: 45vh; /* Fill 45% of the screen height */
+                height: 100vh; /* Fill 45% of the screen height */
+            }
+        }
+
+        @media screen and (min-width: 2880px) {
+            .home__title {
+                font-size: 72px; /* Further increase font size for larger screens */
+            }
+
+            .home__description {
+                font-size: 32px; /* Further increase font size for larger screens */
+            }
+
+            .section__title {
+                font-size: 56px; /* Further increase font size for larger screens */
+            }
+
+            .shop-item-title {
+                font-size: 28px; /* Further increase font size for larger screens */
+            }
+
+            .shop-item-price {
+                font-size: 26px; /* Further increase font size for larger screens */
             }
         }
 
@@ -389,7 +412,7 @@
             </h2>
 
             <div class="featured__container grid">
-                <article class="products__card">
+                <article class="products__card" onclick="window.location.href='menu.html'">
                     <img src="featured1.png" alt="" class="shop-item-image weekly-specials__img">
 
                     <h4 class="shop-item-title">Samosas</h4>
@@ -397,14 +420,14 @@
 
                 </article>
 
-                <article class="products__card">
+                <article class="products__card" onclick="window.location.href='menu.html'">
                     <img src="featured2.png" alt="" class="shop-item-image weekly-specials__img">
 
                     <h4 class="shop-item-title">Mango Lassi</h4>
                     <span class="shop-item-price">$3.99</span>
                 </article>
 
-                <article class="products__card">
+                <article class="products__card" onclick="window.location.href='menu.html'">
                     <img src="featured33.png" alt="" class="shop-item-image weekly-specials__img">
 
                     <h4 class="shop-item-title">Paneer Tikka</h4>
