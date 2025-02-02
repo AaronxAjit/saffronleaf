@@ -78,6 +78,11 @@
             margin: 0 15px; /* Space out nav items */
             position: relative; /* Position relative for pseudo-element */
         }
+        @media screen and (max-width: 767px) {
+            .nav__item::after {
+                display: none; /* Remove lines after navlink for mobile UI */
+            }           
+        }
 
         .nav__item::after {
             content: ''; /* Empty content for line */
