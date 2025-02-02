@@ -339,17 +339,24 @@
         });
 
         document.addEventListener("DOMContentLoaded", function () {
-            let videos = document.querySelectorAll("video");
+        let videos = document.querySelectorAll("video");
+        
+        videos.forEach(video => {
+            video.muted = true; // Ensure videos are muted
+            video.setAttribute("playsinline", ""); // Needed for Safari on iOS
+            video.setAttribute("autoplay", ""); // Explicit autoplay attribute
+            video.setAttribute("loop", ""); // Ensure looping
             
-            videos.forEach(video => {
-                video.muted = true; // Ensure videos are muted
-                video.setAttribute("playsinline", ""); // Needed for Safari on iOS
-                
-                video.play().catch(error => {
-                    console.log("Autoplay blocked. Waiting for user interaction.");
-                });
+            video.play().then(() => {
+                console.log("Video autoplayed successfully");
+            }).catch(error => {
+                console.log("Autoplay blocked. Attempting to play again with user gesture workaround.");
+                setTimeout(() => {
+                    video.play(); // Retry autoplay
+                }, 500);
             });
         });
+    });
     </script>
 </body>
 </html>
