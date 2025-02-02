@@ -80,11 +80,6 @@ body {
   color: var(--text-color);
 }
 
-h1, h2, h3, h4 {
-  color: var(--title-color);
-  font-weight: var(--font-medium);
-}
-
 ul {
   list-style: none;
 }
@@ -251,6 +246,9 @@ button {
   .home__data {
     flex: 1;
     padding: 20px;
+    color: white; /* Change text color to white */
+    -webkit-text-stroke: .3px white; /* width and color */
+    text-shadow: 2px 2px 4px rgba(65, 0, 0, 0.758); /* Add shadow for 3D effect */
   }
 
   .home__img-bg {
@@ -317,6 +315,9 @@ button {
 .home__data {
   flex: 1;
   padding: 20px;
+  color: white; /* Change text color to white */
+  -webkit-text-stroke: .3px white; /* width and color */
+  text-shadow: 2px 2px 4px rgba(65, 0, 0, 0.758); /* Add shadow for 3D effect */
 }
 
 .home__img-bg {
@@ -421,7 +422,6 @@ button {
 
 .home__title {
   font-family: 'Libre Baskerville', serif;
-  font-size: var(--biggest-font-size);
   font-weight: var(--font-bold);
   margin-bottom: var(--mb-1);
 }
