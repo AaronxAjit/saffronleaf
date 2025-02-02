@@ -237,8 +237,10 @@
             padding: 20px;
             border: 1px solid #888;
             width: 80%; 
+            max-width: 800px; /* Ensure it doesn't get too large */
             display: flex;
             align-items: center;
+            position: relative;
         }
 
         .modal-content img {
@@ -253,7 +255,9 @@
 
         .close {
             color: #aaa;
-            float: right;
+            position: absolute;
+            top: 10px;
+            right: 20px;
             font-size: 28px;
             font-weight: bold;
         }
@@ -474,9 +478,9 @@
     <div id="toast" class="toast">Purchase successful!</div>
     <div id="ingredientsModal" class="modal">
         <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
             <img id="modalImage" src="" alt="Food Image">
             <div class="modal-details">
-                <span class="close" onclick="closeModal()">&times;</span>
                 <h2 id="modalTitle"></h2>
                 <p id="modalDescription"></p>
                 <h3>Ingredients:</h3>
