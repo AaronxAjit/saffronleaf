@@ -47,6 +47,197 @@
                 text-align: center;
                 margin-top: 4rem; 
             }
+            .story__images {
+                display: none;
+            }
+        }
+        header {
+            position: fixed;
+            z-index: 1000;
+            width: 100%;
+            background-color: var(--body-color);
+            box-shadow: 0 1px 4px hsla(0, 4%, 15%, .10);
+        }
+        .nav {
+            background-color: rgba(93, 0, 0, 0.868); /* Background color */
+            width: 100%; /* Ensure it spans the entire width */
+            padding: 0 40px; /* Add padding to the left and right */
+            display: flex; /* Use flexbox for layout */
+            justify-content: space-between; /* Space out items */
+            align-items: center; /* Center items vertically */
+        }
+
+        .nav__list {
+            display: flex; /* Use flexbox for layout */
+            list-style: none; /* Remove default list styling */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+        .nav__item {
+            margin: 0 15px; /* Space out nav items */
+            position: relative; /* Position relative for pseudo-element */
+        }
+
+        .nav__item::after {
+            content: ''; /* Empty content for line */
+            position: absolute; /* Position absolute for line */
+            right: -15px; /* Position to the right of the item */
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%); /* Adjust for centering */
+            height: 20px; /* Line height */
+            width: 1px; /* Line width */
+            background-color: #150000; /* Line color */
+        }
+
+        .nav__link {
+            color: #fff; /* Link color */
+            text-decoration: none; /* Remove underline */
+            padding: 10px 0; /* Add padding */
+            transition: color 0.3s; /* Smooth color transition */
+        }
+
+        .nav__link:hover {
+            color: #b7985d; /* Hover color */
+        }
+
+        .nav__link.active-link {
+            color: #cfcfcf; /* Ensure active link is #cfcfcf */
+        }
+        .nav__logo {
+            color: #cfcfcf; /* Light grey color */
+            font-family: 'Libre Baskerville', serif;
+            text-transform: uppercase;
+            font-weight: var(--font-bold);
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            column-gap: .25rem;
+        }
+        .story {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .story__video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .story__container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 50px; /* Add padding to the bottom */
+        }
+        .home {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 100vh;
+            padding-bottom: 50px; /* Add padding to the bottom */
+        }
+
+        .home__video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .home__container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .story__description {
+            color: black;
+        }
+        .story__images {
+            padding: 30px; /* Add very little padding */
+        }
+        .story__data {
+            margin-top: -50px; /* Adjust this value as needed to move the content higher */
+        }
+        .map-container {
+            width: 100%;
+            height: 400px;
+            margin-top: 50px;
+        }
+        .map-iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-100%);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(100%);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-up {
+            opacity: 0;
+            transform: translateY(100%);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        }
+
+        .slide-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-down {
+            opacity: 0;
+            transform: translateY(-100%);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        }
+
+        .slide-in-down.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
     <!--=============== BOXICONS ===============-->
@@ -62,7 +253,8 @@
 <body>
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
-        <nav class="nav container">
+        <nav class="nav">
+            <!-- Removed 'container' class from nav element -->
             <a href="index.html" class="nav__logo">
                 <i></i> Saffron Leaf
             </a>
@@ -70,13 +262,13 @@
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item">
-                        <a href="index.html" class="nav__link">Home</a>
+                        <a href="index.html" class="nav__link active-link">Home</a>
                     </li>
                     <li class="nav__item">
                         <a href="menu.html" class="nav__link">Menu</a>
                     </li>
                     <li class="nav__item">
-                        <a href="about.html" class="nav__link active-link">About</a>
+                        <a href="about.html" class="nav__link">About</a>
                     </li>
                     <li class="nav__item">
                         <a href="menu.html#cart-section" class="nav__link">Cart</a>
@@ -98,30 +290,51 @@
     <!--==================== MAIN ====================-->
     <main class="main">
         <!--==================== About ====================-->
-        <section class="story section container">
-            <div class="story__container grid">
-                <div class="story__data about__content">
-                    <h2 class="section__title story__section-title">
-                        About
-                    </h2>
+    <section class="home">
+        <video src="aboutbackvid.mp4" autoplay muted loop class="home__video-bg"></video>
+        <div class="home__container grid">
+            <section class="story section container">
+                <div class="story__container grid">
+                    <div class="story__images about__image slide-in-left">
+                        <video src="aboutvid.mp4" autoplay muted loop class="story__img"></video>
+                        <div class="story__square"></div>
+                    </div>
+                    <div class="story__data about__content slide-in-right">
+                        <h2 class="section__title story__section-title">
+                            About
+                        </h2>
 
-                    <p class="story__description">
-                        Saffron Leaf brings a splash of vibrancy to the restaurant scene specializing in authentic vegetarian and vegan Indian food. The chefs at Saffron Leaf pride themselves in carefully selecting fresh, local ingredients to create wonderful dishes steeped in aroma and color. Creamy lentil dal, fragrant biryanis-these vegan and vegetarian dishes are designed to bring forth and emphasize the beauty of Indian spices and plant-based ingredients. In developing a menu that focuses on health-conscious cooking with the widest possible range of dietary preferences, Saffron Leaf aims to put care and balance back in the mouth of taste by its famed sticking and original flavors. 
-                    </p>
+                        <p class="story__description">
+                            Saffron Leaf brings a splash of vibrancy to the restaurant scene specializing in authentic vegetarian and vegan Indian food. The chefs at Saffron Leaf pride themselves in carefully selecting fresh, local ingredients to create wonderful dishes steeped in aroma and color. Creamy lentil dal, fragrant biryanis-these vegan and vegetarian dishes are designed to bring forth and emphasize the beauty of Indian spices and plant-based ingredients. In developing a menu that focuses on health-conscious cooking with the widest possible range of dietary preferences, Saffron Leaf aims to put care and balance back in the mouth of taste by its famed sticking and original flavors. 
+                        </p>
+                    </div>
                 </div>
-
-                <div class="story__images about__image">
-                    <img src="story.png" alt="" class="story__img">
-                    <div class="story__square"></div>
-                </div>
-            </div>
-        </section>
+            </section>
+        </div>
+    </section>
+    <!-- Add Google Maps location -->
+    <div class="map-container fade-in">
+        <iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.154933469354!2d72.57136231502235!3d23.0225059849534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84f5e8b8b1b1%3A0x2b8b8b8b8b8b8b8b!2sSaffron%20Leaf!5e0!3m2!1sen!2sin!4v1633072800000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+    </div>
     <!--=============== MAIN JS ===============-->
     <script src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            const elements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .slide-in-up, .slide-in-down');
+            elements.forEach(element => observer.observe(element));
+        });
+    </script>
 </body>
 </html>
-
-        <br>
         <!--=============== Extra Info/Contact/License information ===============-->
         <footer class="footer section">
             <section class="contact section container" id="contact">
