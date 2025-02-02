@@ -296,12 +296,12 @@
     <main class="main">
         <!--==================== About ====================-->
     <section class="home">
-        <video src="aboutbackvid.mp4" autoplay muted loop class="home__video-bg"></video>
+        <video src="aboutbackvid.mp4" autoplay muted loop playsinline class="home__video-bg"></video>
         <div class="home__container grid">
             <section class="story section container">
                 <div class="story__container grid">
                     <div class="story__images about__image slide-in-left">
-                        <video src="aboutvid.mp4" autoplay muted loop class="story__img"></video>
+                        <video src="aboutvid.mp4" autoplay muted loop playsinline class="story__img"></video>
                         <div class="story__square"></div>
                     </div>
                     <div class="story__data about__content slide-in-right">
@@ -336,6 +336,23 @@
 
             const elements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .slide-in-up, .slide-in-down');
             elements.forEach(element => observer.observe(element));
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            let videos = document.querySelectorAll("video");
+            
+            videos.forEach(video => {
+                video.muted = true; // Ensure videos are muted
+                video.setAttribute("playsinline", ""); // Needed for Safari on iOS
+                
+                let playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        console.log("Autoplay blocked. Waiting for user interaction.");
+                        document.addEventListener("click", () => video.play(), { once: true });
+                    });
+                }
+            });
         });
     </script>
 </body>
