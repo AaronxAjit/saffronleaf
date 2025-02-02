@@ -162,7 +162,7 @@
         }
 
         .home__data {
-            color: #fff; /* Text color */
+            color: white; /* Change text color to white */
             -webkit-text-stroke: .3px white; /* width and color */
             text-shadow: 2px 2px 4px rgba(65, 0, 0, 0.758); /* Add shadow for 3D effect */
         }
@@ -343,7 +343,77 @@
             width: 100%;
             height: auto;
         }
-
+        .private-dining {
+            padding: 30px 0; /* Reduce padding */
+            background: url('locationback.png') no-repeat center center;
+            background-size: cover;
+            text-align: center;
+            color: white; /* Change text color to white */
+            box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5); /* Add dark overlay */
+        }
+        .private-dining__gallery {
+            position: relative;
+            width: 100%;
+            max-width: 400px; /* Reduce max width */
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 10px; /* Add rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+        }
+        .private-dining__gallery img {
+            width: 100%;
+            height: auto;
+            display: none;
+            transition: opacity 1s ease-in-out;
+        }
+        .private-dining__gallery img.active {
+            display: block;
+        }
+        .private-dining__text {
+            margin-top: 10px; /* Reduce margin */
+            font-size: 16px; /* Reduce font size */
+            color: white; /* Change text color to white */
+            font-family: 'Libre Baskerville', serif; /* Change text font to Libre Baskerville */
+        }
+        .button {
+            display: inline-block;
+            background-color: var(--button-color);
+            color: #FFF;
+            padding: 0.5rem 1rem; /* Reduce padding */
+            font-weight: var(--font-medium);
+            transition: .3s;
+            margin-top: 10px; /* Reduce margin to the top */
+            text-decoration: none; /* Remove underline */
+            border-radius: 5px; /* Add rounded corners */
+        }
+        .button:hover {
+            background-color: var(--button-color-alt);
+        }
+        .gallery {
+            padding: 60px 0;
+        }
+        .gallery__container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .gallery__img {
+            width: calc(20% - 10px);
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        @media screen and (max-width: 767px) {
+            .gallery__img {
+                width: calc(33.33% - 10px);
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .gallery__img {
+                width: calc(50% - 10px);
+            }
+        }
     </style>
     <!--=============== BOXICONS ===============-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
@@ -401,10 +471,7 @@
                 <img src="hero2.png" alt="Hero Image 2">
             </div>
             <div class="home__container container grid">
-                <div class="home__img-bg">
-                    <video src="homebgvid.mp4" autoplay muted loop playsinline class="active"></video>
-                    <video src="homebgvid2.mp4" autoplay muted loop playsinline></video>
-                </div>
+                
 
 
                 <div class="home__data">
@@ -415,6 +482,7 @@
                 </div>
             </div>
         </section>
+
         <!--==================== WEEKLY SPECIALS ====================-->
         <section class="featured section container scroll-animation" id="featured">
             <h2 class="section__title" style="font-family: 'Libre Baskerville', serif;">
@@ -447,6 +515,36 @@
 
             </div>
         </section>
+        <!--==================== PRIVATE DINING ====================-->
+        <section class="private-dining section container scroll-animation" id="private-dining">
+            <h2 class="section__title">Private Dining</h2>
+            <div class="private-dining__gallery">
+                <img src="location1.png" alt="Private Dining Image 1" class="active">
+                <img src="location2.png" alt="Private Dining Image 2">
+                <img src="location3.png" alt="Private Dining Image 3">
+            </div>
+            <p class="private-dining__text">
+                A group of vegan Indians want to spread their vegan culture through exquisite dining experiences.
+            </p>
+            <a href="about.html#contact" class="button">Locations</a>
+        </section>
+
+        <!--==================== GALLERY ====================-->
+        <section class="gallery scroll-animation">
+            <div class="gallery__container">
+                <img src="gallery1.png" alt="Gallery Image 1" class="gallery__img">
+                <img src="gallery2.png" alt="Gallery Image 2" class="gallery__img">
+                <img src="gallery3.png" alt="Gallery Image 3" class="gallery__img">
+                <img src="gallery4.png" alt="Gallery Image 4" class="gallery__img">
+                <img src="gallery5.png" alt="Gallery Image 5" class="gallery__img">
+                <img src="gallery6.png" alt="Gallery Image 6" class="gallery__img">
+                <img src="gallery7.png" alt="Gallery Image 7" class="gallery__img">
+                <img src="gallery8.png" alt="Gallery Image 8" class="gallery__img">
+                <img src="gallery9.png" alt="Gallery Image 9" class="gallery__img">
+                <img src="gallery10.png" alt="Gallery Image 10" class="gallery__img">
+            </div>
+        </section>
+        
     </main>
     <!--=============== MAIN JS ===============-->
     <script src="main.js"></script>
@@ -502,12 +600,23 @@
             document.querySelector('.home__title').classList.add('fade-in-up');
             document.querySelector('.home__description').classList.add('fade-in-left');
             document.querySelector('.nav__logo').classList.add('fade-in-right');
+
+            // Private dining gallery image switch
+            const galleryImages = document.querySelectorAll('.private-dining__gallery img');
+            let galleryIndex = 0;
+
+            setInterval(() => {
+                galleryImages[galleryIndex].classList.remove('active');
+                galleryIndex = (galleryIndex + 1) % galleryImages.length;
+                galleryImages[galleryIndex].classList.add('active');
+            }, 5000); // Change gallery image every 5 seconds
         });
 
         // Ensure the page loads at the top on page load
         window.addEventListener('load', function() {
             window.scrollTo(0, 0);
         });
+
         document.addEventListener("DOMContentLoaded", function () {
             let videos = document.querySelectorAll("video");
             
@@ -515,13 +624,9 @@
                 video.muted = true; // Ensure videos are muted
                 video.setAttribute("playsinline", ""); // Needed for Safari on iOS
                 
-                let playPromise = video.play();
-                if (playPromise !== undefined) {
-                    playPromise.catch(error => {
-                        console.log("Autoplay blocked. Waiting for user interaction.");
-                        document.addEventListener("click", () => video.play(), { once: true });
-                    });
-                }
+                video.play().catch(error => {
+                    console.log("Autoplay blocked. Waiting for user interaction.");
+                });
             });
         });
 
