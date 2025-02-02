@@ -143,6 +143,73 @@
                 font-size: 0.8rem; 
             }
         }
+                .products__card:hover {
+            transform: translateY(-10px);
+            background-color: #550000; /* Dark red */
+        }
+        header {
+            position: fixed;
+            z-index: 1000;
+            width: 100%;
+            background-color: var(--body-color);
+            box-shadow: 0 1px 4px hsla(0, 4%, 15%, .10);
+        }
+        .nav {
+            background-color: rgba(93, 0, 0, 0.868); /* Background color */
+            width: 100%; /* Ensure it spans the entire width */
+            padding: 0 40px; /* Add padding to the left and right */
+            display: flex; /* Use flexbox for layout */
+            justify-content: space-between; /* Space out items */
+            align-items: center; /* Center items vertically */
+        }
+
+        .nav__list {
+            display: flex; /* Use flexbox for layout */
+            list-style: none; /* Remove default list styling */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+        .nav__item {
+            margin: 0 15px; /* Space out nav items */
+            position: relative; /* Position relative for pseudo-element */
+        }
+
+        .nav__item::after {
+            content: ''; /* Empty content for line */
+            position: absolute; /* Position absolute for line */
+            right: -15px; /* Position to the right of the item */
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%); /* Adjust for centering */
+            height: 20px; /* Line height */
+            width: 1px; /* Line width */
+            background-color: #150000; /* Line color */
+        }
+
+        .nav__link {
+            color: #fff; /* Link color */
+            text-decoration: none; /* Remove underline */
+            padding: 10px 0; /* Add padding */
+            transition: color 0.3s; /* Smooth color transition */
+        }
+
+        .nav__link:hover {
+            color: #b7985d; /* Hover color */
+        }
+
+        .nav__link.active-link {
+            color: #cfcfcf; /* Ensure active link is #cfcfcf */
+        }
+        .nav__logo {
+            color: #cfcfcf; /* Light grey color */
+            font-family: 'Libre Baskerville', serif;
+            text-transform: uppercase;
+            font-weight: var(--font-bold);
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            column-gap: .25rem;
+        }
     </style>
     <!--=============== Font ==================-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -152,7 +219,8 @@
 <body>
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
-        <nav class="nav container">
+        <nav class="nav">
+            <!-- Removed 'container' class from nav element -->
             <a href="index.html" class="nav__logo">
                 <i></i> Saffron Leaf
             </a>
