@@ -345,13 +345,9 @@
                 video.muted = true; // Ensure videos are muted
                 video.setAttribute("playsinline", ""); // Needed for Safari on iOS
                 
-                let playPromise = video.play();
-                if (playPromise !== undefined) {
-                    playPromise.catch(error => {
-                        console.log("Autoplay blocked. Waiting for user interaction.");
-                        document.addEventListener("click", () => video.play(), { once: true });
-                    });
-                }
+                video.play().catch(error => {
+                    console.log("Autoplay blocked. Waiting for user interaction.");
+                });
             });
         });
     </script>
