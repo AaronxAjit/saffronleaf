@@ -291,12 +291,15 @@
     <main class="main">
         <!--==================== About ====================-->
     <section class="home">
-        <video src="aboutbackvid.mp4" autoplay muted loop class="home__video-bg"></video>
+        <img src="aboutbackvid.gif" alt="Background Image" class="home__video-bg">
         <div class="home__container grid">
             <section class="story section container">
                 <div class="story__container grid">
                     <div class="story__images about__image slide-in-left">
-                        <video src="aboutvid.mp4" autoplay muted loop class="story__img"></video>
+                        <video autoplay muted playsinline class="story__img">
+                            <source src="aboutvid.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                         <div class="story__square"></div>
                     </div>
                     <div class="story__data about__content slide-in-right">
