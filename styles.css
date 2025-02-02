@@ -802,7 +802,6 @@ button {
   }
   .home__img-bg {
     order: 1;
-    transform: translate(1.5rem, -6rem);
   }
   .home__data {
     padding: 0 0 3rem 6rem;
@@ -858,7 +857,6 @@ button {
   }
   .home__img-bg {
     width: 480px;
-    height: 800px;
   }
   .home__img {
     width: 420px;
