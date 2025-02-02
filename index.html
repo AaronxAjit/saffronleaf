@@ -256,15 +256,15 @@
 
         @media screen and (min-width: 2880px) {
             .home__title {
-                font-size: 72px; /* Further increase font size for larger screens */
+                font-size: 100px; /* Further increase font size for larger screens */
             }
 
             .home__description {
-                font-size: 32px; /* Further increase font size for larger screens */
+                font-size: 40px; /* Further increase font size for larger screens */
             }
 
             .section__title {
-                font-size: 56px; /* Further increase font size for larger screens */
+                font-size: 90px; /* Further increase font size for larger screens */
             }
 
             .shop-item-title {
@@ -402,8 +402,8 @@
             </div>
             <div class="home__container container grid">
                 <div class="home__img-bg">
-                    <video src="homebgvid.mp4" autoplay muted loop class="active"></video>
-                    <video src="homebgvid2.mp4" autoplay muted loop></video>
+                    <video src="homebgvid.mp4" autoplay muted loop playsinline class="active"></video>
+                    <video src="homebgvid2.mp4" autoplay muted loop playsinline></video>
                 </div>
 
 
@@ -508,10 +508,22 @@
         window.addEventListener('load', function() {
             window.scrollTo(0, 0);
         });
+
         document.addEventListener("DOMContentLoaded", function () {
-            let video = document.querySelector("video");
-            video.muted = true; // Ensure video is muted for autoplay
-            video.play().catch(error => console.log("Autoplay failed:", error));
+            let videos = document.querySelectorAll("video");
+            
+            videos.forEach(video => {
+                video.muted = true; // Ensure videos are muted
+                video.setAttribute("playsinline", ""); // Needed for Safari on iOS
+                
+                let playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        console.log("Autoplay blocked. Waiting for user interaction.");
+                        document.addEventListener("click", () => video.play(), { once: true });
+                    });
+                }
+            });
         });
 
     </script>
