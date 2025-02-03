@@ -214,12 +214,12 @@ button {
   }
 
   .home__data {
-    order: 1; /* Ensure home__data appears first */
-    z-index: 1; /* Ensure home__data is above home__img-bg */
+    order: 1;
+    z-index: 1; 
   }
 
   .home__img-bg {
-    order: 2; /* Ensure home__img-bg appears second */
+    order: 2;
   }
 
   .home__social {
@@ -246,9 +246,9 @@ button {
   .home__data {
     flex: 1;
     padding: 20px;
-    color: white; /* Change text color to white */
-    -webkit-text-stroke: .3px white; /* width and color */
-    text-shadow: 2px 2px 4px rgba(65, 0, 0, 0.758); /* Add shadow for 3D effect */
+    color: white; 
+    -webkit-text-stroke: .3px white; 
+    text-shadow: 2px 2px 4px rgba(65, 0, 0, 0.758);
   }
 
   .home__img-bg {
@@ -256,7 +256,7 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Fill top to bottom of the hero section */
+    height: 100vh;
   }
 }
 
@@ -268,7 +268,7 @@ button {
 }
 
 .nav__link {
-  color: #cfcfcf; /* Link color */
+  color: #cfcfcf; 
   font-weight: var(--font-medium);
   text-transform: uppercase;
   font-size: var(--h2-font-size);
@@ -276,7 +276,7 @@ button {
 }
 
 .nav__link:hover {
-  color: #b7985d; /* Hover color */
+  color: #b7985d; 
 }
 
 .nav__close {
@@ -287,18 +287,18 @@ button {
   cursor: pointer;
 }
 
-/* Show menu */
+
 .show-menu {
   right: 0;
 }
 
-/* Change background header */
+
 .scroll-header {
   background-color: var(--body-color);
   box-shadow: 0 1px 4px hsla(0, 4%, 15%, .10);
 }
 
-/* Active link */
+
 .active-link {
   color: var(--first-color);
 }
@@ -315,9 +315,9 @@ button {
 .home__data {
   flex: 1;
   padding: 20px;
-  color: white; /* Change text color to white */
-  -webkit-text-stroke: .3px white; /* width and color */
-  text-shadow: 2px 2px 4px rgba(65, 0, 0, 0.758); /* Add shadow for 3D effect */
+  color: white; 
+  -webkit-text-stroke: .3px white; 
+  text-shadow: 2px 2px 4px rgba(65, 0, 0, 0.758); 
 }
 
 .home__img-bg {
@@ -325,7 +325,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Fill top to bottom of the hero section */
+  height: 100vh; 
 }
 
 @media screen and (max-width: 767px) {
@@ -353,7 +353,6 @@ button {
 }
 
 .home__img {
- /* width: 240px;*/
   position: absolute;
   animation: rotation 30s infinite linear;
 }
@@ -368,17 +367,17 @@ button {
 }
 
 .home__img-bg img:nth-child(2) {
-  position: absolute; /* Change to absolute positioning */
-  bottom: -45px; /* Adjust this value to move the image down */
+  position: absolute; 
+  bottom: -45px; 
 }
 
 @media (max-width: 768px) {
   .home__img-bg img:first-child {
-    top: -5px; /* Adjust this value to move the images closer in mobile view */
+    top: -5px;
   }
 
   .home__img-bg img:nth-child(2) {
-    bottom: -10px; /* Adjust this value to move the images closer in mobile view */
+    bottom: -10px;
   }
 }
 
@@ -1026,29 +1025,29 @@ button {
 
 :root {
   --first-color: hsl(9, 91%, 17%);
-  --light-grey: #827e7e; /* Light grey color */
-  --dark-grey: #b0adad; /* Dark grey color */
+  --light-grey: #827e7e;
+  --dark-grey: #b0adad; 
 }
 
 .footer {
   display: flex;
-  flex-direction: column; /* Stack items vertically */
+  flex-direction: column; 
   justify-content: center;
   align-items: center;
   text-align: center;
   height: 200px; /* Increased height */
   background-color: var(--first-color);
-  color: var(--light-grey); /* Light grey text color */
-  padding: 20px; /* Add padding around the footer */
+  color: var(--light-grey); 
+  padding: 20px; 
 }
 
 .footer h2 {
-  color: var(--dark-grey); /* Dark grey title color */
-  margin-bottom: 10px; /* Add margin between title and other text */
+  color: var(--dark-grey); 
+  margin-bottom: 10px; 
 }
 
 .footer p {
-  margin: 5px 0; /* Add margin between paragraphs */
+  margin: 5px 0; 
 }
 
 @media (max-width: 768px) {
@@ -1062,8 +1061,8 @@ button {
     margin: 5px 0;
   }
 }
-/* Example CSS to ensure the parent container can accommodate the content */
+
 .parent-container {
-  overflow: auto; /* Adjust as needed */
-  height: auto; /* Adjust as needed */
+  overflow: auto; 
+  height: auto; 
 }
