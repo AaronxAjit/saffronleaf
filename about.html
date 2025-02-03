@@ -42,6 +42,17 @@
         .about__content:hover, .about__image:hover {
             transform: scale(1.05);
         }
+
+        .scroll-animation {
+            opacity: 0;
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .scroll-animation.visible {
+            opacity: 1;
+            transform: none;
+        }
+
         @media (max-width: 768px) {
             .section__title {
                 text-align: center;
@@ -175,6 +186,7 @@
         }
         .story__description {
             color: black;
+            font-weight: bold; /* Make the description bold */
         }
         .story__images {
             padding: 30px; /* Add very little padding */
@@ -244,6 +256,9 @@
             opacity: 1;
             transform: translateY(0);
         }
+        .section__title {
+            color: black; /* Make the section title black */
+        }
     </style>
     <!--=============== BOXICONS ===============-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
@@ -274,6 +289,9 @@
                     </li>
                     <li class="nav__item">
                         <a href="about.html" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="reference.html" class="nav__link">Reference</a>
                     </li>
                     <li class="nav__item">
                         <a href="menu.html#cart-section" class="nav__link">Cart</a>
