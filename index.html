@@ -73,6 +73,9 @@
             text-align: center;
             transition: transform 0.3s;
             cursor: pointer; /* Add cursor pointer */
+            width: 100%; /* Ensure all cards have the same width */
+            max-width: 300px; /* Set a maximum width for the cards */
+            margin: 0 auto; /* Center the cards */
         }
 
         .products__card:hover {
@@ -483,6 +486,10 @@
 
             .cart-item-title {
                 font-size: 0.8rem;
+            }
+
+            .featured__container {
+                justify-content: center; /* Center the container on mobile */
             }
         }
                 .products__card:hover {
