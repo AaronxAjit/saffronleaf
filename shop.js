@@ -32,6 +32,19 @@ function ready() {
     document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
 
     loadCart()
+
+    // Cart sidebar toggle
+    const cartSidebar = document.getElementById('cart-sidebar');
+    const navCart = document.getElementById('nav-cart');
+    const cartClose = document.getElementById('cart-close');
+
+    navCart.addEventListener('click', () => {
+        cartSidebar.classList.add('show');
+    });
+
+    cartClose.addEventListener('click', () => {
+        cartSidebar.classList.remove('show');
+    });
 }
 
 function showToast(message) {
