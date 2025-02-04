@@ -47,6 +47,7 @@
             opacity: 0;
             transform: scale(0.5);
             animation: appear 0.5s ease-out forwards;
+            display: none; /* Hide content initially */
         }
 
         .featured {
@@ -88,7 +89,6 @@
             border-radius: 10px;
             margin-bottom: 15px;
         }
-
         .shop-item-title {
             font-size: 20px;
             margin-bottom: 10px;
@@ -99,7 +99,11 @@
             font-size: 18px;
             color: #b7985d;
         }
-
+        /* */
+        .products__card:hover .shop-item-title,
+        .products__card:hover .shop-item-price {
+            color: white; /* Change text color to white on hover */
+        }
         .weekly-specials__img {
             opacity: 0;
             transform: translateY(-50px);
@@ -768,6 +772,50 @@
         .cart-sidebar .btn-purchase:hover {
             background-color: var(--button-color-alt);
         }
+
+        .loading-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000; /* Ensure it covers the entire page */
+        }
+
+        .logo {
+            width: 150px;
+            height: 150px;
+            background: url('https://media.discordapp.net/attachments/1327033467053146113/1327037656986812558/DALLE_2025-01-09_16.11.57_-_An_elegant_and_aesthetic_logo_design_for_a_website_called_Saffron_Leaf._The_logo_features_a_minimalist_saffron_leaf_in_a_dark_color_scheme_such_as_.webp?ex=67a29120&is=67a13fa0&hm=c7a57945ad83c07c701dd19bdaa63ed6b0ff6e696078abce9050656e1a2216dd&=&format=webp&width=620&height=620') no-repeat center center;
+            background-size: contain;
+            animation: zoomIn 3s infinite;
+        }
+
+        @keyframes zoomIn {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+        .loading-text {
+            position: absolute;
+            bottom: 50px;
+            font-size: 1.2rem;
+            color: #fff;
+            letter-spacing: 2px;
+        }
     </style>
     <!--=============== BOXICONS ===============-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
@@ -780,6 +828,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playwrite+AU+SA&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="loading-container">
+        <div class="logo"></div>
+        <div class="loading-text">Loading</div>
+    </div>
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
         <nav class="nav">
@@ -923,6 +975,11 @@
     <script src="shop.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                document.querySelector('.loading-container').style.display = 'none';
+                document.querySelector('.content').style.display = 'block';
+            }, 2700); 
+
             // Ensure the page loads at the top
             window.scrollTo(0, 0);
             // Scroll to top on link click
