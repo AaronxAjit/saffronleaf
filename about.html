@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saffron Leaf</title>
+  
     <style>
         @keyframes slideInX {
             from {
@@ -70,58 +71,58 @@
             box-shadow: 0 1px 4px hsla(0, 4%, 15%, .10);
         }
         .nav {
-            background-color: rgba(93, 0, 0, 0.868); /* Background color */
-            width: 100%; /* Ensure it spans the entire width */
-            padding: 0 40px; /* Add padding to the left and right */
-            display: flex; /* Use flexbox for layout */
-            justify-content: space-between; /* Space out items */
-            align-items: center; /* Center items vertically */
+            background-color: rgba(93, 0, 0, 0.868); 
+            width: 100%; 
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center; 
         }
 
         .nav__list {
-            display: flex; /* Use flexbox for layout */
-            list-style: none; /* Remove default list styling */
-            margin: 0; /* Remove default margin */
-            padding: 0; /* Remove default padding */
+            display: flex; 
+            list-style: none; 
+            margin: 0;
+            padding: 0;
         }
 
         .nav__item {
-            margin: 0 15px; /* Space out nav items */
-            position: relative; /* Position relative for pseudo-element */
+            margin: 0 15px; 
+            position: relative;
         }
         @media screen and (max-width: 767px) {
             .nav__item::after {
-                display: none; /* Remove lines after navlink for mobile UI */
+                display: none; 
             }           
         }
 
         .nav__item::after {
-            content: ''; /* Empty content for line */
-            position: absolute; /* Position absolute for line */
-            right: -15px; /* Position to the right of the item */
-            top: 50%; /* Center vertically */
-            transform: translateY(-50%); /* Adjust for centering */
-            height: 20px; /* Line height */
-            width: 1px; /* Line width */
-            background-color: #150000; /* Line color */
+            content: ''; 
+            position: absolute; 
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 20px; 
+            width: 1px; 
+            background-color: #150000; 
         }
 
         .nav__link {
-            color: #fff; /* Link color */
-            text-decoration: none; /* Remove underline */
-            padding: 10px 0; /* Add padding */
-            transition: color 0.3s; /* Smooth color transition */
+            color: #fff; 
+            text-decoration: none;
+            padding: 10px 0; 
+            transition: color 0.3s; 
         }
 
         .nav__link:hover {
-            color: #b7985d; /* Hover color */
+            color: #b7985d; 
         }
 
         .nav__link.active-link {
-            color: #cfcfcf; /* Ensure active link is #cfcfcf */
+            color: #cfcfcf;
         }
         .nav__logo {
-            color: #cfcfcf; /* Light grey color */
+            color: #cfcfcf; 
             font-family: 'Libre Baskerville', serif;
             text-transform: uppercase;
             font-weight: var(--font-bold);
@@ -155,14 +156,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding-bottom: 50px; /* Add padding to the bottom */
+            padding-bottom: 50px; 
         }
         .home {
             position: relative;
             overflow: hidden;
             width: 100%;
             height: 100vh;
-            padding-bottom: 50px; /* Add padding to the bottom */
+            padding-bottom: 50px; 
         }
 
         .home__video-bg {
@@ -186,13 +187,13 @@
         }
         .story__description {
             color: black;
-            font-weight: bold; /* Make the description bold */
+            font-weight: bold; 
         }
         .story__images {
-            padding: 30px; /* Add very little padding */
+            padding: 30px; 
         }
         .story__data {
-            margin-top: -50px; /* Adjust this value as needed to move the content higher */
+            margin-top: -50px; 
         }
         .map-container {
             width: 100%;
@@ -257,323 +258,7 @@
             transform: translateY(0);
         }
         .section__title {
-            color: black; /* Make the section title black */
-        }
-        @media (max-width: 768px) {
-            .section__title {
-                text-align: center;
-                margin-top: 4rem; 
-            }
-
-            .cart-image {
-                width: 20px;
-                height: auto;
-            }
-
-            .cart-item {
-                font-size: .45rem; 
-            }
-
-            .cart-price {
-                font-size: 0.6rem; 
-            }
-
-            .cart-quantity-input {
-                width: 40px; 
-                font-size: 0.8rem; 
-            }
-
-            .btn-danger {
-                padding: 2px 4px; 
-                font-size: 0.8rem; 
-            }
-
-            .nav__item::after {
-                display: none; /* Remove lines after navlink for mobile UI */
-            }
-
-            .cart-item-title {
-                font-size: 0.8rem;
-            }
-        }
-                .products__card:hover {
-            transform: translateY(-10px);
-            background-color: #550000; /* Dark red */
-        }
-        header {
-            position: fixed;
-            z-index: 1000;
-            width: 100%;
-            background-color: var(--body-color);
-            box-shadow: 0 1px 4px hsla(0, 4%, 15%, .10);
-        }
-        .nav {
-            background-color: rgba(93, 0, 0, 0.868); /* Background color */
-            width: 100%; /* Ensure it spans the entire width */
-            padding: 0 40px; /* Add padding to the left and right */
-            display: flex; /* Use flexbox for layout */
-            justify-content: space-between; /* Space out items */
-            align-items: center; /* Center items vertically */
-        }
-
-        .nav__list {
-            display: flex; /* Use flexbox for layout */
-            list-style: none; /* Remove default list styling */
-            margin: 0; /* Remove default margin */
-            padding: 0; /* Remove default padding */
-        }
-
-        .nav__item {
-            margin: 0 15px; /* Space out nav items */
-            position: relative; /* Position relative for pseudo-element */
-        }
-
-        .nav__item::after {
-            content: ''; /* Empty content for line */
-            position: absolute; /* Position absolute for line */
-            right: -15px; /* Position to the right of the item */
-            top: 50%; /* Center vertically */
-            transform: translateY(-50%); /* Adjust for centering */
-            height: 20px; /* Line height */
-            width: 1px; /* Line width */
-            background-color: #150000; /* Line color */
-        }
-
-        .nav__link {
-            color: #cfcfcf; /* Light grey color */
-            text-decoration: none; /* Remove underline */
-            padding: 10px 0; /* Add padding */
-            transition: color 0.3s; /* Smooth color transition */
-        }
-
-        .nav__link:hover {
-            color: #b7985d; /* Hover color */
-        }
-
-        .nav__link.active-link {
-            color: #cfcfcf; /* Ensure active link is #cfcfcf */
-        }
-        .nav__logo {
-            color: #cfcfcf; /* Light grey color */
-            font-family: 'Libre Baskerville', serif;
-            text-transform: uppercase;
-            font-weight: var(--font-bold);
-            letter-spacing: 1px;
-            display: inline-flex;
-            align-items: center;
-            column-gap: .25rem;
-        }
-
-        .modal {
-            display: none; 
-            position: fixed; 
-            z-index: 1000; 
-            left: 0; 
-            top: 0; 
-            width: 100%; 
-            height: 100%; 
-            overflow: auto; 
-            background-color: rgb(0,0,0); 
-            background-color: rgba(0,0,0,0.4); 
-            padding-top: 60px; 
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto; 
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%; 
-            max-width: 800px; /* Ensure it doesn't get too large */
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-
-        .modal-content img {
-            max-width: 40%;
-            border-radius: 10px;
-            margin-right: 20px;
-        }
-
-        .modal-content .modal-details {
-            max-width: 60%;
-        }
-
-        .close {
-            color: #aaa;
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
             color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .products__container--center {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .products__card {
-            flex: 1; /* Ensure both cards take up equal space */
-            max-width: 300px; /* Set a maximum width for the cards */
-        }
-
-        .cart-sidebar {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 500px; 
-            height: 100%;
-            background-color: #fff;
-            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-            transition: right 0.3s ease;
-            z-index: 1001;
-            padding: 20px;
-            overflow-y: auto;
-        }
-
-        .cart-sidebar.show {
-            right: 0;
-        }
-
-        @media (max-width: 768px) {
-            .cart-sidebar {
-                width: 100%; /* Full width for mobile */
-            }
-        }
-
-        .cart-sidebar .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        .cart-sidebar .cart-header {
-            font-weight: bold;
-            font-size: 1.25em;
-            color: #333;
-        }
-
-        .cart-sidebar .cart-column {
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid black;
-            margin-right: 1.5em;
-            padding-bottom: 10px;
-            margin-top: 10px;
-        }
-
-        .cart-sidebar .cart-row {
-            display: flex;
-        }
-
-        .cart-sidebar .cart-item {
-            width: 45%;
-        }
-
-        .cart-sidebar .cart-price {
-            width: 20%;
-            font-size: 1.2em;
-            color: #333;
-        }
-
-        .cart-sidebar .cart-quantity {
-            width: 35%;
-        }
-
-        .cart-sidebar .cart-item-title {
-            color: #333;
-            margin-left: .5em;
-            font-size: 1.2em;
-        }
-
-        .cart-sidebar .cart-item-image {
-            width: 75px;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .cart-sidebar .btn-danger {
-            color: white;
-            background-color: #510202;
-            border: none;
-            border-radius: .3em;
-            font-weight: bold;
-        }
-
-        .cart-sidebar .btn-danger:hover {
-            background-color: #3d0202;
-        }
-        .nav__cart {
-            font-size: 25px;
-            color: white;
-        }
-        .cart-sidebar .cart-quantity-input {
-            height: 34px;
-            width: 37px;
-            border-radius: 5px;
-            border: 1px solid #000000;
-            background-color: #eee;
-            color: #333;
-            padding: 0;
-            text-align: center;
-            font-size: 1.2em;
-        }
-
-        .cart-sidebar .cart-row:last-child {
-            border-bottom: 1px solid black;
-        }
-
-        .cart-sidebar .cart-row:last-child .cart-column {
-            border: none;
-        }
-
-        .cart-sidebar .cart-total {
-            text-align: end;
-            margin-top: 10px;
-            margin-right: 10px;
-        }
-
-        .cart-sidebar .cart-total-title {
-            font-weight: bold;
-            font-size: 1.5em;
-            color: black;
-            margin-right: 20px;
-        }
-
-        .cart-sidebar .cart-total-price {
-            color: #333;
-            font-size: 1.1em;
-        }
-
-        .cart-sidebar .btn-purchase {
-            display: block;
-            margin: 40px auto 80px auto;
-            padding: 10px;
-            font-size: 1.75em;
-            background-color: var(--button-color);
-            color: #FFF;
-            border: none;
-            border-radius: 5px;
-            transition: .3s;
-        }
-
-        .cart-sidebar .btn-purchase:hover {
-            background-color: var(--button-color-alt);
-        }
-        .nav__cart i {
-            font-size: 32px; /* Increase the font size */
         }
     </style>
     <!--=============== BOXICONS ===============-->
@@ -609,6 +294,9 @@
                     <li class="nav__item">
                         <a href="reference.html" class="nav__link">Reference</a>
                     </li>
+                    <li class="nav__item">
+                        <a href="menu.html#cart-section" class="nav__link">Cart</a>
+                    </li>
                 </ul>
 
                 <div class="nav__close" id="nav-close">
@@ -620,60 +308,87 @@
                 <div class="nav__toggle" id="nav-toggle">
                     <i class='bx bx-grid-alt' ></i>
                 </div>
-                <div class="nav__cart" id="nav-cart">
-                    <i class='bx bx-cart'></i>
-                </div>
             </div>
         </nav>
     </header>
     <!--==================== MAIN ====================-->
     <main class="main">
         <!--==================== About ====================-->
-        <section class="home">
-            <video src="aboutbackvid.mp4" autoplay muted loop playsinline class="home__video-bg"></video>
-            <div class="home__container grid">
-                <section class="story section container">
-                    <div class="story__container grid">
-                        <div class="story__images about__image slide-in-left">
-                            <video src="aboutvid.mp4" autoplay muted loop playsinline class="story__img"></video>
-                            <div class="story__square"></div>
-                        </div>
-                        <div class="story__data about__content slide-in-right">
-                            <h2 class="section__title story__section-title">
-                                About
-                            </h2>
-
-                            <p class="story__description">
-                                Saffron Leaf brings a splash of vibrancy to the restaurant scene specializing in authentic vegetarian and vegan Indian food. The chefs at Saffron Leaf pride themselves in carefully selecting fresh, local ingredients to create wonderful dishes steeped in aroma and color. Creamy lentil dal, fragrant biryanis-these vegan and vegetarian dishes are designed to bring forth and emphasize the beauty of Indian spices and plant-based ingredients. In developing a menu that focuses on health-conscious cooking with the widest possible range of dietary preferences, Saffron Leaf aims to put care and balance back in the mouth of taste by its famed sticking and original flavors. 
-                            </p>
-                        </div>
+    <section id="section1" class="home">
+        <video src="aboutbackvid.mp4" autoplay muted loop playsinline class="home__video-bg" style="position: fixed"></video>
+        <div class="home__container grid">
+            <section class="story section container">
+                <div class="story__container grid">
+                    <div class="story__images about__image slide-in-left">
+                        <video src="aboutvid.mp4" autoplay muted loop playsinline class="story__img"></video>
+                        <div class="story__square"></div>
                     </div>
-                </section>
-            </div>
-        </section>
-        <!-- Add Google Maps location -->
-        <div class="map-container fade-in">
-            <iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.154933469354!2d72.57136231502235!3d23.0225059849534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84f5e8b8b1b1%3A0x2b8b8b8b8b8b8b8b!2sSaffron%20Leaf!5e0!3m2!1sen!2sin!4v1633072800000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+                    <div class="story__data about__content slide-in-right" style="background-color: white; padding: 20px; top: 10px; right: 100px; position: relative">
+                        <h2 class="section__title story__section-title">
+                            Our Promise
+                        </h2>
+
+                        <p class="story__description">
+                            Saffron Leaf brings a splash of vibrancy to the restaurant scene specializing in authentic vegetarian and vegan Indian food. The chefs at Saffron Leaf pride themselves in carefully selecting fresh, local ingredients to create wonderful dishes steeped in aroma and color. Creamy lentil dal, fragrant biryanis-these vegan and vegetarian dishes are designed to bring forth and emphasize the beauty of Indian spices and plant-based ingredients. In developing a menu that focuses on health-conscious cooking with the widest possible range of dietary preferences, Saffron Leaf aims to put care and balance back in the mouth of taste by its famed sticking and original flavors. 
+                        </p>
+                    </div>
+                </div>
+            </section>
         </div>
-    </main>
-    <div class="cart-sidebar" id="cart-sidebar">
-        <span class="close-btn" id="cart-close">&times;</span>
-        <h2 class="cart-header">CART</h2>
-        <div class="cart-row">
-            <span class="cart-item cart-header cart-column">ITEM</span>
-            <span class="cart-price cart-header cart-column">PRICE</span>
-            <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+    </section>
+    
+    <section id="section2" class="home">
+        <div class="home__container grid">
+            <section class="story section container">
+                <div class="story__container grid">
+                    <div class="story__images about__image slide-in-left" style="order: 1">
+                        <img src="truck transport.jpg" alt="" class="story__img" style="">
+                        <div class="story__square"></div>
+                    </div>
+                    <div class="story__data about__content slide-in-right" style="background-color: white; padding: 20px; top: 10px; left: 100px; position: relative">
+                        <h2 class="section__title story__section-title">
+                            From Local Farms to Your Plate
+                        </h2>
+
+                        <p class="story__description">
+                            We’re proud to embrace the farm-to-table philosophy, ensuring that every ingredient is fresh, local, and sustainably sourced. Our team works closely with local suppliers, making regular visits to farms to hand-select produce, dairy, and meats. We track where every ingredient comes from, so you can trust the story behind your meal. And by sourcing locally, we reduce transportation emissions and guarantee our ingredients travel a short distance, preserving their flavor and nutrition, as well as reducing environmental impact.</p>
+                    </div>
+                </div>
+            </section>
         </div>
-        <div class="cart-items"></div>
-        <div class="cart-total">
-            <strong class="cart-total-title">Total</strong>
-            <span class="cart-total-price">$0</span>
+    </section>
+
+    <section id="section3" class="home">
+        <!-- <video src="aboutbackvid.mp4" autoplay muted loop playsinline class="home__video-bg"></video> -->
+        <div class="home__container grid">
+            <section class="story section container">
+                <div class="story__container grid">
+                    <div class="story__images about__image slide-in-left">
+                        <video src="vid.mp4" autoplay muted loop playsinline class="story__img"></video>
+                        <div class="story__square"></div>
+                    </div>
+                    <div class="story__data about__content slide-in-right" style="background-color: white; padding: 20px; top: 10px; right: 100px; position: relative">
+                        <h2 class="section__title story__section-title">
+                            A Better World, One Bite at a Time
+                        </h2>
+
+                        <p class="story__description">
+                            Sustainability is woven into the fabric of everything we do at Saffron Leaf. From how we source our ingredients to how we manage our kitchen, we’re constantly working to reduce our environmental footprint.
+                            Our kitchen is designed to make the most of every ingredient. Any unavoidable food waste is composted, returning nutrients to the soil and closing the loop in our farm-to-table system. For takeout and delivery, we use compostable or recyclable materials to minimize plastic waste.
+                            By making these choices, we ensure that every bite you take contributes to a healthier planet—because good food should do good for the world, too.
+                            
+                        </p>
+                    </div>
+                </div>
+            </section>
         </div>
-        <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+    </section>
+    <!-- Add Google Maps location -->
+    <div class="map-container fade-in">
+        <iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.154933469354!2d72.57136231502235!3d23.0225059849534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84f5e8b8b1b1%3A0x2b8b8b8b8b8b8b8b!2sSaffron%20Leaf!5e0!3m2!1sen!2sin!4v1633072800000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
     </div>
     <!--=============== MAIN JS ===============-->
     <script src="main.js"></script>
-    <script src="shop.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const observer = new IntersectionObserver((entries) => {
@@ -690,153 +405,24 @@
         });
 
         document.addEventListener("DOMContentLoaded", function () {
-            let videos = document.querySelectorAll("video");
+        let videos = document.querySelectorAll("video");
+        
+        videos.forEach(video => {
+            video.muted = true; // Ensure videos are muted
+            video.setAttribute("playsinline", ""); 
+            video.setAttribute("autoplay", ""); 
+            video.setAttribute("loop", ""); 
             
-            videos.forEach(video => {
-                video.muted = true; // Ensure videos are muted
-                video.setAttribute("playsinline", ""); // Needed for Safari on iOS
-                video.setAttribute("autoplay", ""); // Explicit autoplay attribute
-                video.setAttribute("loop", ""); // Ensure looping
-                
-                video.play().then(() => {
-                    console.log("Video autoplayed successfully");
-                }).catch(error => {
-                    console.log("Autoplay blocked. Attempting to play again with user gesture workaround.");
-                    setTimeout(() => {
-                        video.play(); // Retry autoplay
-                    }, 500);
-                });
+            video.play().then(() => {
+                console.log("Video autoplayed successfully");
+            }).catch(error => {
+                console.log("Autoplay blocked. Attempting to play again with user gesture workaround.");
+                setTimeout(() => {
+                    video.play(); // Retry autoplay
+                }, 500);
             });
         });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const cartSidebar = document.getElementById('cart-sidebar');
-            const navCart = document.getElementById('nav-cart');
-            const cartClose = document.getElementById('cart-close');
-
-            navCart.addEventListener('click', () => {
-                cartSidebar.classList.add('show');
-            });
-
-            cartClose.addEventListener('click', () => {
-                cartSidebar.classList.remove('show');
-            });
-
-            loadCart();
-        });
-
-        function loadCart() {
-            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-            const cartItemsContainer = document.querySelector('.cart-items');
-            cartItemsContainer.innerHTML = '';
-
-            cartItems.forEach(item => {
-                addItemToCart(item.title, item.price, item.imageSrc, false);
-            });
-
-            updateCartTotal();
-        }
-
-        function saveCart() {
-            const cartItems = [];
-            document.querySelectorAll('.cart-row').forEach(row => {
-                const title = row.querySelector('.cart-item-title').innerText;
-                const price = row.querySelector('.cart-price').innerText;
-                const imageSrc = row.querySelector('.cart-item-image').src;
-                const quantity = row.querySelector('.cart-quantity-input').value;
-                cartItems.push({ title, price, imageSrc, quantity });
-            });
-
-            localStorage.setItem('cart', JSON.stringify(cartItems));
-        }
-
-        function addItemToCart(title, price, imageSrc, showToastMessage) {
-            const cartItemsContainer = document.querySelector('.cart-items');
-            const cartItemNames = cartItemsContainer.querySelectorAll('.cart-item-title');
-
-            for (let i = 0; i < cartItemNames.length; i++) {
-                if (cartItemNames[i].innerText === title) {
-                    const quantityElement = cartItemNames[i].parentElement.parentElement.querySelector('.cart-quantity-input');
-                    quantityElement.value = parseInt(quantityElement.value) + 1;
-                    updateCartTotal();
-                    saveCart();
-                    if (showToastMessage) {
-                        showToast('Item added to cart');
-                    }
-                    return;
-                }
-            }
-
-            const cartRow = document.createElement('div');
-            cartRow.classList.add('cart-row');
-            const cartRowContents = `
-                <div class="cart-item cart-column">
-                    <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
-                    <span class="cart-item-title">${title}</span>
-                </div>
-                <span class="cart-price cart-column">${price}</span>
-                <div class="cart-quantity cart-column">
-                    <input class="cart-quantity-input" type="number" value="1">
-                    <button class="btn btn-danger" type="button">REMOVE</button>
-                </div>`;
-            cartRow.innerHTML = cartRowContents;
-            cartItemsContainer.append(cartRow);
-            cartRow.querySelector('.btn-danger').addEventListener('click', removeCartItem);
-            cartRow.querySelector('.cart-quantity-input').addEventListener('change', quantityChanged);
-            updateCartTotal();
-            saveCart();
-            if (showToastMessage) {
-                showToast('Item added to cart');
-            }
-        }
-
-        function removeCartItem(event) {
-            const buttonClicked = event.target;
-            buttonClicked.parentElement.parentElement.remove();
-            updateCartTotal();
-            saveCart();
-            showToast('Item removed from cart');
-        }
-
-        function quantityChanged(event) {
-            const input = event.target;
-            if (isNaN(input.value) || input.value <= 0) {
-                input.value = 1;
-            }
-            updateCartTotal();
-            saveCart();
-        }
-
-        function updateCartTotal() {
-            const cartItemContainer = document.querySelector('.cart-items');
-            const cartRows = cartItemContainer.querySelectorAll('.cart-row');
-            let total = 0;
-
-            cartRows.forEach(row => {
-                const priceElement = row.querySelector('.cart-price');
-                const quantityElement = row.querySelector('.cart-quantity-input');
-                const price = parseFloat(priceElement.innerText.replace('$', ''));
-                const quantity = quantityElement.value;
-                total += price * quantity;
-            });
-
-            total = Math.round(total * 100) / 100;
-            document.querySelector('.cart-total-price').innerText = '$' + total;
-        }
-
-        function showToast(message) {
-            const toast = document.createElement('div');
-            toast.className = 'toast';
-            toast.innerText = message;
-            document.body.appendChild(toast);
-            setTimeout(() => {
-                toast.classList.add('show');
-            }, 100);
-            setTimeout(() => {
-                toast.classList.remove('show');
-                document.body.removeChild(toast);
-            }, 3000);
-        }
+    });
     </script>
 </body>
 </html>
@@ -865,20 +451,5 @@
         <footer class="footer">
             <p>Thank you</p>
         </footer>  
-        <div class="cart-sidebar" id="cart-sidebar">
-            <span class="close-btn" id="cart-close">&times;</span>
-            <h2 class="cart-header">CART</h2>
-            <div class="cart-row">
-                <span class="cart-item cart-header cart-column">ITEM</span>
-                <span class="cart-price cart-header cart-column">PRICE</span>
-                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
-            </div>
-            <div class="cart-items"></div>
-            <div class="cart-total">
-                <strong class="cart-total-title">Total</strong>
-                <span class="cart-total-price">$0</span>
-            </div>
-            <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
-        </div>
         </body>
         </html>
