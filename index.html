@@ -177,6 +177,31 @@
             font-size: 64px; /* Increase font size */
             font-weight: bold; /* Make text bold */
             margin-bottom: 30px; /* Add space below */
+            animation: textAppear 1s ease-out forwards, textBounce 1s ease-out 1s; /* Add animation */
+            opacity: 0; /* Initially hidden */
+        }
+
+        @keyframes textAppear {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes textBounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            60% {
+                transform: translateY(-60px);
+            }
+            80% {
+                transform: translateY(-30px);
+            }
         }
 
         .home__description {
@@ -816,6 +841,75 @@
             color: #fff;
             letter-spacing: 2px;
         }
+        .reviews-section {
+            width: 100%;
+            padding: 50px 0;
+            background: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .reviews-container {
+            width: 80%;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1.5s ease, transform 1.5s ease;
+        }
+
+        .review-box {
+            background-color: rgba(245, 245, 220, 0.8); /* Creme color with transparency */
+            border-radius: 15px;
+            padding: 20px;
+            width: 30%;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .review-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .review-box h3 {
+            font-size: 1.5rem;
+            color: #000; /* Black text */
+            margin-bottom: 10px;
+        }
+
+        .stars {
+            color: #FFD700; /* Golden color */
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .review-text {
+            font-size: 1rem;
+            color: #000; /* Black text */
+            line-height: 1.6;
+        }
+
+        /* Scroll Animation */
+        .reviews-section.visible .reviews-container {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .reviews-container {
+                flex-direction: column; /* Stack reviews vertically */
+                align-items: center; /* Center align reviews */
+            }
+
+            .review-box {
+                width: 80%; /* Increase width for better readability */
+                margin-bottom: 20px; /* Add space between reviews */
+            }
+        }
     </style>
     <!--=============== BOXICONS ===============-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
@@ -923,6 +1017,30 @@
 
             </div>
         </section>
+
+        <!--==================== REVIEWS ====================-->
+        <section class="reviews-section" id="reviews">
+            <div class="reviews-container">
+                <div class="review-box">
+                    <h3>Jessica R.</h3>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">Saffron Leaf offers an extraordinary dining experience! The ambiance is cozy, the staff is friendly, and the food is absolutely divine. Every dish is bursting with flavor. Highly recommend!</p>
+                </div>
+
+                <div class="review-box">
+                    <h3>Lebron J.</h3>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">The best restaurant in town! So fresh so Vegan!!! The presentation of the food is stunning, and the taste is even better. Saffron Leaf never disappoints, whether it’s a casual lunch or a special occasion.</p>
+                </div>
+
+                <div class="review-box">
+                    <h3>Donald T.</h3>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">Absolutely love Saffron Leaf! The flavors are unique, and the ingredients are always fresh. The service is impeccable, and the atmosphere is perfect for a relaxing evening.</p>
+                </div>
+            </div>
+        </section>
+
         <!--==================== PRIVATE DINING ====================-->
         <section class="private-dining section container scroll-animation" id="private-dining">
             <h2 class="section__title">Private Dining</h2>
@@ -977,6 +1095,7 @@
             setTimeout(function() {
                 document.querySelector('.loading-container').style.display = 'none';
                 document.querySelector('.content').style.display = 'block';
+                document.querySelector('.home__title').style.opacity = '1'; // Trigger text animation
             }, 2700); 
 
             // Ensure the page loads at the top
@@ -1176,6 +1295,16 @@
                 document.body.removeChild(toast);
             }, 3000);
         }
+
+        window.addEventListener('scroll', function() {
+            const reviewsSection = document.getElementById('reviews');
+            const reviewsPosition = reviewsSection.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.2;
+
+            if (reviewsPosition < screenPosition) {
+                reviewsSection.classList.add('visible');
+            }
+        });
     </script>
     <br>
     <!--=============== Extra Info/Contact/License information ===============-->
