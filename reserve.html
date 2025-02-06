@@ -9,6 +9,7 @@
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="styles.css">
     <style>
+        
         @keyframes appear {
             from {
                 opacity: 0;
@@ -747,7 +748,11 @@
             <input type="email" id="email" name="email" placeholder="Email" required>
             <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
             <input type="date" id="date" name="date" required>
-            <input type="text" id="location" name="location" placeholder="Location" required>
+            <select id="location" name="location" required>
+                <option value="" disabled selected>Select Location</option>
+                <option value="Gujarat, India">Gujarat, India</option>
+                <option value="Bangalore, India">Bangalore, India</option>
+            </select>
             <button type="submit">Submit</button>
         </form>
     </div>
