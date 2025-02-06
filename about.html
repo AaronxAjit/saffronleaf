@@ -158,11 +158,7 @@
             padding-bottom: 50px; /* Add padding to the bottom */
         }
         .home {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            height: 100vh;
-            padding-bottom: 50px; /* Add padding to the bottom */
+            top: 200px
         }
 
         .home__video-bg {
@@ -668,10 +664,10 @@
             <video src="aboutbackvid.mp4" autoplay muted loop playsinline class="home__video-bg"></video>
             <div class="home__container grid">
                 <section class="story section container">
-                    <div class="story__container grid">
+                    <div class="story__container grid" style="display: flex;">
                         <div class="story__images about__image slide-in-left">
-                            <video src="aboutvid.mp4" autoplay muted loop playsinline class="story__img"></video>
-                            <div class="story__square"></div>
+                            <img id="carousel-image" src="about.jpg" alt="Carousel Image" style="width: 1200px; height: 400px; object-fit: cover; margin-bottom: 50px;">
+                            <!-- <div class="story__square"></div> -->
                         </div>
                         <div class="story__data about__content slide-in-right">
                             <div class="carousel">
@@ -893,26 +889,35 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            const slides = document.querySelectorAll('.carousel__slide');
-            const prevButton = document.getElementById('prevSlide');
-            const nextButton = document.getElementById('nextSlide');
-            let currentIndex = 0;
+        const slides = document.querySelectorAll('.carousel__slide');
+        const prevButton = document.getElementById('prevSlide');
+        const nextButton = document.getElementById('nextSlide');
+        const carouselImage = document.getElementById('carousel-image');
+        const imageSources = [
+            'about.jpg',
+            'truck transport.jpg',
 
-            function showSlide(index) {
-                const slidesContainer = document.querySelector('.carousel__slides');
-                slidesContainer.style.transform = `translateX(-${index * 100}%)`;
-            }
+        ];
+        let currentIndex = 0;
 
-            prevButton.addEventListener('click', function() {
-                currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
-                showSlide(currentIndex);
-            });
+        function showSlide(index) {
+            const slidesContainer = document.querySelector('.carousel__slides');
+            slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+            carouselImage.src = imageSources[index];
+        }
 
-            nextButton.addEventListener('click', function() {
-                currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
-                showSlide(currentIndex);
-            });
+        prevButton.addEventListener('click', function() {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
+            showSlide(currentIndex);
         });
+
+        nextButton.addEventListener('click', function() {
+            currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+            showSlide(currentIndex);
+        });
+
+        showSlide(currentIndex); // Initialize the first slide
+    });
     </script>
 </body>
 </html>
