@@ -640,6 +640,9 @@
                         <a href="about.html" class="nav__link">About</a>
                     </li>
                     <li class="nav__item">
+                        <a href="reserve.html" class="nav__link">Reserve</a>
+                    </li>
+                    <li class="nav__item">
                         <a href="reference.html" class="nav__link">Reference</a>
                     </li>
                 </ul>
@@ -849,6 +852,63 @@
                 document.body.removeChild(toast);
             }, 3000);
         }
+    </script>
+    <script src="main.js"></script>
+    <script src="shop.js"></script>
+    <script>
+        
+        document.getElementById('purchaseButton').addEventListener('click', function() {
+            var toast = document.getElementById('toast');
+            toast.className = 'toast show';
+            setTimeout(function() {
+                toast.className = toast.className.replace('show', '');
+            }, 3000);
+        });
+
+        function showIngredients(title, image, description, ingredients, calories) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalImage').src = image;
+            document.getElementById('modalDescription').innerText = description;
+            document.getElementById('modalCalories').innerText = calories;
+            const ingredientsList = document.getElementById('ingredientsList');
+            ingredientsList.innerHTML = '';
+            ingredients.forEach(ingredient => {
+                const li = document.createElement('li');
+                li.innerText = ingredient;
+                ingredientsList.appendChild(li);
+            });
+            document.getElementById('ingredientsModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('ingredientsModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('ingredientsModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        function addToCart(item, price) {
+            // Add your add to cart logic here
+            console.log(`Added ${item} to cart for $${price}`);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const cartSidebar = document.getElementById('cart-sidebar');
+            const navCart = document.getElementById('nav-cart');
+            const cartClose = document.getElementById('cart-close');
+
+            navCart.addEventListener('click', () => {
+                cartSidebar.classList.add('show');
+            });
+
+            cartClose.addEventListener('click', () => {
+                cartSidebar.classList.remove('show');
+            });
+        });
     </script>
 </body>
 </html>
