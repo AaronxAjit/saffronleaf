@@ -386,7 +386,7 @@
         .private-dining__gallery {
             position: relative;
             width: 100%;
-            max-width: 400px; /* Reduce max width */
+            max-width: 600px; /* Increase max width */
             margin: 0 auto;
             overflow: hidden;
             border-radius: 10px; /* Add rounded corners */
@@ -910,6 +910,26 @@
                 margin-bottom: 20px; /* Add space between reviews */
             }
         }
+
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .slider-button.left {
+            left: 10px;
+        }
+
+        .slider-button.right {
+            right: 10px;
+        }
     </style>
     <!--=============== BOXICONS ===============-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
@@ -943,6 +963,9 @@
                     </li>
                     <li class="nav__item">
                         <a href="about.html" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="reserve.html" class="nav__link">Reserve</a>
                     </li>
                     <li class="nav__item">
                         <a href="reference.html" class="nav__link">Reference</a>
@@ -1045,14 +1068,17 @@
         <section class="private-dining section container scroll-animation" id="private-dining">
             <h2 class="section__title">Private Dining</h2>
             <div class="private-dining__gallery">
+                <button class="slider-button left" onclick="changeImage(-1)">&#10094;</button>
                 <img src="location1.png" alt="Private Dining Image 1" class="active">
                 <img src="location2.png" alt="Private Dining Image 2">
                 <img src="location3.png" alt="Private Dining Image 3">
+                <button class="slider-button right" onclick="changeImage(1)">&#10095;</button>
             </div>
             <p class="private-dining__text">
                 A group of vegan Indians want to spread their vegan culture through exquisite dining experiences.
             </p>
             <a href="about.html#contact" class="button">Locations</a>
+            <a href="reserve.html" class="button">RESERVE NOW</a>
         </section>
 
         <!--==================== GALLERY ====================-->
@@ -1070,7 +1096,6 @@
                 <img src="gallery10.png" alt="Gallery Image 10" class="gallery__img">
             </div>
         </section>
-        
     </main>
     <div class="cart-sidebar" id="cart-sidebar">
         <span class="close-btn" id="cart-close">&times;</span>
@@ -1143,10 +1168,17 @@
             const galleryImages = document.querySelectorAll('.private-dining__gallery img');
             let galleryIndex = 0;
 
-            setInterval(() => {
+            function changeImage(direction) {
                 galleryImages[galleryIndex].classList.remove('active');
-                galleryIndex = (galleryIndex + 1) % galleryImages.length;
+                galleryIndex = (galleryIndex + direction + galleryImages.length) % galleryImages.length;
                 galleryImages[galleryIndex].classList.add('active');
+            }
+
+            document.querySelector('.slider-button.left').addEventListener('click', () => changeImage(-1));
+            document.querySelector('.slider-button.right').addEventListener('click', () => changeImage(1));
+
+            setInterval(() => {
+                changeImage(1);
             }, 5000); // Change gallery image every 5 seconds
 
             // Cart sidebar toggle
@@ -1304,6 +1336,61 @@
             if (reviewsPosition < screenPosition) {
                 reviewsSection.classList.add('visible');
             }
+        });
+    </script>
+    <script>
+        
+        document.getElementById('purchaseButton').addEventListener('click', function() {
+            var toast = document.getElementById('toast');
+            toast.className = 'toast show';
+            setTimeout(function() {
+                toast.className = toast.className.replace('show', '');
+            }, 3000);
+        });
+
+        function showIngredients(title, image, description, ingredients, calories) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalImage').src = image;
+            document.getElementById('modalDescription').innerText = description;
+            document.getElementById('modalCalories').innerText = calories;
+            const ingredientsList = document.getElementById('ingredientsList');
+            ingredientsList.innerHTML = '';
+            ingredients.forEach(ingredient => {
+                const li = document.createElement('li');
+                li.innerText = ingredient;
+                ingredientsList.appendChild(li);
+            });
+            document.getElementById('ingredientsModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('ingredientsModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('ingredientsModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        function addToCart(item, price) {
+            // Add your add to cart logic here
+            console.log(`Added ${item} to cart for $${price}`);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const cartSidebar = document.getElementById('cart-sidebar');
+            const navCart = document.getElementById('nav-cart');
+            const cartClose = document.getElementById('cart-close');
+
+            navCart.addEventListener('click', () => {
+                cartSidebar.classList.add('show');
+            });
+
+            cartClose.addEventListener('click', () => {
+                cartSidebar.classList.remove('show');
+            });
         });
     </script>
     <br>
