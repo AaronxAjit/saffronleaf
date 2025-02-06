@@ -119,7 +119,6 @@ button {
 }
 
 .section__title {
-  position: relative;
   font-size: var(--h3-font-size);
   margin-bottom: var(--mb-3);
   text-transform: uppercase;
@@ -821,9 +820,7 @@ button {
     align-items: center;
   }
 
-  .story__section-title {
-    text-align: initial;
-  }
+
   .story__section-title::before {
     margin: initial;
   }
