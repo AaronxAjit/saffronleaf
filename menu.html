@@ -81,12 +81,14 @@
 
         .products__card {
             background-color: #fff;
-            border-radius: 10px;
+            border-radius: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
             text-align: center;
             transition: transform 0.3s;
             position: relative;
+            flex: 1; /* Ensure both cards take up equal space */
+            max-width: 600px; /* Increase the maximum width for the cards */
         }
 
         .products__card:hover {
@@ -515,6 +517,9 @@
                     </li>
                     <li class="nav__item">
                         <a href="about.html" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="reserve.html" class="nav__link">Reserve</a>
                     </li>
                     <li class="nav__item">
                         <a href="reference.html" class="nav__link">Reference</a>
