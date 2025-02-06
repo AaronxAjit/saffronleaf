@@ -572,6 +572,41 @@
         .cart-sidebar .btn-purchase:hover {
             background-color: var(--button-color-alt);
         }
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .carousel__slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel__slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        .carousel__controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel__control {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
     </style>
     <!--=============== BOXICONS ===============-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
@@ -639,13 +674,32 @@
                             <div class="story__square"></div>
                         </div>
                         <div class="story__data about__content slide-in-right">
-                            <h2 class="section__title story__section-title">
-                                About
-                            </h2>
-
-                            <p class="story__description">
-                                Saffron Leaf brings a splash of vibrancy to the restaurant scene specializing in authentic vegetarian and vegan Indian food. The chefs at Saffron Leaf pride themselves in carefully selecting fresh, local ingredients to create wonderful dishes steeped in aroma and color. Creamy lentil dal, fragrant biryanis-these vegan and vegetarian dishes are designed to bring forth and emphasize the beauty of Indian spices and plant-based ingredients. In developing a menu that focuses on health-conscious cooking with the widest possible range of dietary preferences, Saffron Leaf aims to put care and balance back in the mouth of taste by its famed sticking and original flavors. 
-                            </p>
+                            <div class="carousel">
+                                <div class="carousel__slides">
+                                    <div class="carousel__slide">
+                                        <h2 class="section__title story__section-title">About</h2>
+                                        <p class="story__description">
+                                            Saffron Leaf brings a splash of vibrancy to the restaurant scene specializing in authentic vegetarian and vegan Indian food. The chefs at Saffron Leaf pride themselves in carefully selecting fresh, local ingredients to create wonderful dishes steeped in aroma and color. Creamy lentil dal, fragrant biryanis-these vegan and vegetarian dishes are designed to bring forth and emphasize the beauty of Indian spices and plant-based ingredients. In developing a menu that focuses on health-conscious cooking with the widest possible range of dietary preferences, Saffron Leaf aims to put care and balance back in the mouth of taste by its famed sticking and original flavors.
+                                        </p>
+                                    </div>
+                                    <div class="carousel__slide">
+                                        <h2 class="section__title story__section-title">Our Mission</h2>
+                                        <p class="story__description">
+                                            At Saffron Leaf, we believe in the power of community and sustainability. Our restaurant not only serves delicious food but also supports local farmers and suppliers. We are committed to reducing our environmental footprint by using eco-friendly packaging and minimizing food waste. Join us in our journey towards a greener future while enjoying the rich flavors of Indian cuisine.
+                                        </p>
+                                    </div>
+                                    <div class="carousel__slide">
+                                        <h2 class="section__title story__section-title">Our Team</h2>
+                                        <p class="story__description">
+                                            Our team at Saffron Leaf is dedicated to bringing our very own vegan Indian culture. From the moment you walk in, you will be greeted with warm hospitality and a welcoming atmosphere. Our chefs are passionate about creating dishes that not only taste amazing but also tell a story of tradition and innovation. Come and experience the magic of Saffron Leaf, where every meal is a celebration of flavors.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="carousel__controls">
+                                    <button class="carousel__control" id="prevSlide">&lt;</button>
+                                    <button class="carousel__control" id="nextSlide">&gt;</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -837,6 +891,28 @@
                 document.body.removeChild(toast);
             }, 3000);
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.carousel__slide');
+            const prevButton = document.getElementById('prevSlide');
+            const nextButton = document.getElementById('nextSlide');
+            let currentIndex = 0;
+
+            function showSlide(index) {
+                const slidesContainer = document.querySelector('.carousel__slides');
+                slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+            }
+
+            prevButton.addEventListener('click', function() {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
+                showSlide(currentIndex);
+            });
+
+            nextButton.addEventListener('click', function() {
+                currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+                showSlide(currentIndex);
+            });
+        });
     </script>
 </body>
 </html>
