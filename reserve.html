@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reference - Saffron Leaf</title>
+    <!--=============== BOXICONS ===============-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content {
+            opacity: 0;
+            transform: scale(0.5);
+            animation: appear 0.5s ease-out forwards;
+        }
+
+        .toast {
+            visibility: hidden;
+            max-width: 50%;
+            margin: 0 auto;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            font-size: 17px;
+            transform: translateX(-50%);
+        }
+
+        .toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @keyframes fadein {
+            from {bottom: 0; opacity: 0;}
+            to {bottom: 30px; opacity: 1;}
+        }
+
+        @keyframes fadeout {
+            from {bottom: 30px; opacity: 1;}
+            to {bottom: 0; opacity: 0;}
+        }
+
+        .featured {
+            padding: 60px 0;
+        }
+
+        .featured__container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .products__card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .products__card:hover {
+            transform: translateY(-10px);
+            background-color: #550000; /* Dark red */
+        }
+
+        .products__card:hover .shop-item-title,
+        .products__card:hover .shop-item-price {
+            color: white; /* Change text color to white on hover */
+        }
+
+        .shop-item {
+            position: relative;
+        }
+
+        .button {
+            padding: 1px 1px; 
+            font-size: 10px; 
+            border: 1px solid black; 
+            background-color: white; 
+            color: black; 
+            position: absolute; 
+            top: 10px; 
+            left: 10px; 
+            cursor: pointer; 
+        }
+
+        .button i {
+            color: black; 
+        }
+
+
+        @media (max-width: 768px) {
+            .section__title {
+                text-align: center;
+                margin-top: 4rem; 
+            }
+
+            .cart-item-image {
+                width: 40px;
+                height: auto;
+            }
+
+            .cart-item-title {
+                font-size: 0.6rem; 
+            }
+
+            .cart-price {
+                font-size: 0.6rem; 
+            }
+
+            .cart-quantity-input {
+                width: 40px; 
+                font-size: 0.8rem; 
+            }
+
+            .btn-danger {
+                padding: 2px 4px; 
+                font-size: 0.8rem; 
+            }
+
+            .nav__item::after {
+                display: none; /* Remove lines after navlink for mobile UI */
+            }
+        }
+                .products__card:hover {
+            transform: translateY(-10px);
+            background-color: #550000; /* Dark red */
+        }
+        header {
+            position: fixed;
+            z-index: 1000;
+            width: 100%;
+            background-color: var(--body-color);
+            box-shadow: 0 1px 4px hsla(0, 4%, 15%, .10);
+        }
+        .nav {
+            background-color: rgba(93, 0, 0, 0.868); /* Background color */
+            width: 100%; /* Ensure it spans the entire width */
+            padding: 0 40px; /* Add padding to the left and right */
+            display: flex; /* Use flexbox for layout */
+            justify-content: space-between; /* Space out items */
+            align-items: center; /* Center items vertically */
+        }
+
+        .nav__list {
+            display: flex; /* Use flexbox for layout */
+            list-style: none; /* Remove default list styling */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+        .nav__item {
+            margin: 0 15px; /* Space out nav items */
+            position: relative; /* Position relative for pseudo-element */
+        }
+
+        .nav__item::after {
+            content: ''; /* Empty content for line */
+            position: absolute; /* Position absolute for line */
+            right: -15px; /* Position to the right of the item */
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%); /* Adjust for centering */
+            height: 20px; /* Line height */
+            width: 1px; /* Line width */
+            background-color: #150000; /* Line color */
+        }
+
+        .nav__link {
+            color: #cfcfcf; /* Light grey color */
+            text-decoration: none; /* Remove underline */
+            padding: 10px 0; /* Add padding */
+            transition: color 0.3s; /* Smooth color transition */
+        }
+
+        .nav__link:hover {
+            color: #b7985d; /* Hover color */
+        }
+
+        .nav__link.active-link {
+            color: #cfcfcf; /* Ensure active link is #cfcfcf */
+        }
+        .nav__logo {
+            color: #cfcfcf; /* Light grey color */
+            font-family: 'Libre Baskerville', serif;
+            text-transform: uppercase;
+            font-weight: var(--font-bold);
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            column-gap: .25rem;
+        }
+
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4); 
+            padding-top: 60px; 
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; 
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; 
+            max-width: 800px; /* Ensure it doesn't get too large */
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .modal-content img {
+            max-width: 40%;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .modal-content .modal-details {
+            max-width: 60%;
+        }
+
+        .close {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .products__container--center {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .products__card {
+            flex: 1; /* Ensure both cards take up equal space */
+            max-width: 300px; /* Set a maximum width for the cards */
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .section__title {
+            text-align: center;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        @media (max-width: 768px) {
+            .section__title {
+                text-align: center;
+                margin-top: 4rem; 
+            }
+
+            .cart-image {
+                width: 20px;
+                height: auto;
+            }
+
+            .cart-item {
+                font-size: .45rem; 
+            }
+
+            .cart-price {
+                font-size: 0.6rem; 
+            }
+
+            .cart-quantity-input {
+                width: 40px; 
+                font-size: 0.8rem; 
+            }
+
+            .btn-danger {
+                padding: 2px 4px; 
+                font-size: 0.8rem; 
+            }
+
+            .nav__item::after {
+                display: none; /* Remove lines after navlink for mobile UI */
+            }
+
+            .cart-item-title {
+                font-size: 0.8rem;
+            }
+        }
+                .products__card:hover {
+            transform: translateY(-10px);
+            background-color: #550000; /* Dark red */
+        }
+        header {
+            position: fixed;
+            z-index: 1000;
+            width: 100%;
+            background-color: var(--body-color);
+            box-shadow: 0 1px 4px hsla(0, 4%, 15%, .10);
+        }
+        .nav {
+            background-color: rgba(93, 0, 0, 0.868); /* Background color */
+            width: 100%; /* Ensure it spans the entire width */
+            padding: 0 40px; /* Add padding to the left and right */
+            display: flex; /* Use flexbox for layout */
+            justify-content: space-between; /* Space out items */
+            align-items: center; /* Center items vertically */
+        }
+
+        .nav__list {
+            display: flex; /* Use flexbox for layout */
+            list-style: none; /* Remove default list styling */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+        .nav__item {
+            margin: 0 15px; /* Space out nav items */
+            position: relative; /* Position relative for pseudo-element */
+        }
+
+        .nav__item::after {
+            content: ''; /* Empty content for line */
+            position: absolute; /* Position absolute for line */
+            right: -15px; /* Position to the right of the item */
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%); /* Adjust for centering */
+            height: 20px; /* Line height */
+            width: 1px; /* Line width */
+            background-color: #150000; /* Line color */
+        }
+
+        .nav__link {
+            color: #cfcfcf; /* Light grey color */
+            text-decoration: none; /* Remove underline */
+            padding: 10px 0; /* Add padding */
+            transition: color 0.3s; /* Smooth color transition */
+        }
+
+        .nav__link:hover {
+            color: #b7985d; /* Hover color */
+        }
+
+        .nav__link.active-link {
+            color: #cfcfcf; /* Ensure active link is #cfcfcf */
+        }
+        .nav__logo {
+            color: #cfcfcf; /* Light grey color */
+            font-family: 'Libre Baskerville', serif;
+            text-transform: uppercase;
+            font-weight: var(--font-bold);
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            column-gap: .25rem;
+        }
+
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4); 
+            padding-top: 60px; 
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; 
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; 
+            max-width: 800px; /* Ensure it doesn't get too large */
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .modal-content img {
+            max-width: 40%;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .modal-content .modal-details {
+            max-width: 60%;
+        }
+
+        .close {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .products__container--center {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .products__card {
+            flex: 1; /* Ensure both cards take up equal space */
+            max-width: 300px; /* Set a maximum width for the cards */
+        }
+
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 500px; 
+            height: 100%;
+            background-color: #fff;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+            transition: right 0.3s ease;
+            z-index: 1001;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .cart-sidebar.show {
+            right: 0;
+        }
+
+        @media (max-width: 768px) {
+            .cart-sidebar {
+                width: 100%; /* Full width for mobile */
+            }
+        }
+
+        .cart-sidebar .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .cart-sidebar .cart-header {
+            font-weight: bold;
+            font-size: 1.25em;
+            color: #333;
+        }
+
+        .cart-sidebar .cart-column {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid black;
+            margin-right: 1.5em;
+            padding-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .cart-sidebar .cart-row {
+            display: flex;
+        }
+
+        .cart-sidebar .cart-item {
+            width: 45%;
+        }
+
+        .cart-sidebar .cart-price {
+            width: 20%;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .cart-sidebar .cart-quantity {
+            width: 35%;
+        }
+
+        .cart-sidebar .cart-item-title {
+            color: #333;
+            margin-left: .5em;
+            font-size: 1.2em;
+        }
+
+        .cart-sidebar .cart-item-image {
+            width: 75px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .cart-sidebar .btn-danger {
+            color: white;
+            background-color: #510202;
+            border: none;
+            border-radius: .3em;
+            font-weight: bold;
+        }
+
+        .cart-sidebar .btn-danger:hover {
+            background-color: #3d0202;
+        }
+
+        .cart-sidebar .cart-quantity-input {
+            height: 34px;
+            width: 37px;
+            border-radius: 5px;
+            border: 1px solid #000000;
+            background-color: #eee;
+            color: #333;
+            padding: 0;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        .cart-sidebar .cart-row:last-child {
+            border-bottom: 1px solid black;
+        }
+
+        .cart-sidebar .cart-row:last-child .cart-column {
+            border: none;
+        }
+
+        .cart-sidebar .cart-total {
+            text-align: end;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+
+        .cart-sidebar .cart-total-title {
+            font-weight: bold;
+            font-size: 1.5em;
+            color: black;
+            margin-right: 20px;
+        }
+
+        .cart-sidebar .cart-total-price {
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        .cart-sidebar .btn-purchase {
+            display: block;
+            margin: 40px auto 80px auto;
+            padding: 10px;
+            font-size: 1.75em;
+            background-color: var(--button-color);
+            color: #FFF;
+            border: none;
+            border-radius: 5px;
+            transition: .3s;
+        }
+
+        .cart-sidebar .btn-purchase:hover {
+            background-color: var(--button-color-alt);
+        }
+        .nav__cart {
+            font-size: 25px;
+            color: white;
+        }
+
+        .reservation-container {
+            background-color: rgba(0, 0, 0, 0.8); /* Dark background with transparency */
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            color: white; /* White text color */
+        }
+
+        .reservation-container input,
+        .reservation-container select,
+        .reservation-container button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .reservation-container button {
+            background-color: #000; /* Black button */
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .reservation-container button:hover {
+            background-color: #333; /* Darker black on hover */
+        }
+    </style>
+    <!--=============== Font ==================-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playwrite+AU+SA&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav">
+            <!-- Removed 'container' class from nav element -->
+            <a href="index.html" class="nav__logo">
+                <i></i> Saffron Leaf
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link active-link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="menu.html" class="nav__link">Menu</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="about.html" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="reserve.html" class="nav__link">Reserve</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="reference.html" class="nav__link">Reference</a>
+                    </li>
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class='bx bx-x' ></i>
+                </div>
+            </div>
+
+            <div class="nav__btns">
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-grid-alt' ></i>
+                </div>
+                <div class="nav__cart" id="nav-cart">
+                    <i class='bx bx-cart'></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Reservation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdfcf4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .reservation-container {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .reservation-container input,
+        .reservation-container select,
+        .reservation-container button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .reservation-container button {
+            background-color: #2b1b17;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .reservation-container button:hover {
+            background-color: #4a2c2a;
+        }
+    </style>
+</head>
+<body>
+    <div class="reservation-container">
+        <h2>Reserve Your Table</h2>
+        <form id="reservation-form">
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+            <input type="date" id="date" name="date" required>
+            <input type="text" id="location" name="location" placeholder="Location" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div id="toast" class="toast">Reservation made successfully!</div>
+    <script>
+        document.getElementById('reservation-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            showToast('Reservation made successfully!');
+            this.reset();
+        });
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.innerText = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+    <div class="cart-sidebar" id="cart-sidebar">
+        <span class="close-btn" id="cart-close">&times;</span>
+        <h2 class="cart-header">CART</h2>
+        <div class="cart-row">
+            <span class="cart-item cart-header cart-column">ITEM</span>
+            <span class="cart-price cart-header cart-column">PRICE</span>
+            <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+        </div>
+        <div class="cart-items"></div>
+        <div class="cart-total">
+            <strong class="cart-total-title">Total</strong>
+            <span class="cart-total-price">$0</span>
+        </div>
+        <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+    </div>
+    <script src="main.js"></script>
+    <script src="shop.js"></script>
+    <script>
+        
+        document.getElementById('purchaseButton').addEventListener('click', function() {
+            var toast = document.getElementById('toast');
+            toast.className = 'toast show';
+            setTimeout(function() {
+                toast.className = toast.className.replace('show', '');
+            }, 3000);
+        });
+
+        function showIngredients(title, image, description, ingredients, calories) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalImage').src = image;
+            document.getElementById('modalDescription').innerText = description;
+            document.getElementById('modalCalories').innerText = calories;
+            const ingredientsList = document.getElementById('ingredientsList');
+            ingredientsList.innerHTML = '';
+            ingredients.forEach(ingredient => {
+                const li = document.createElement('li');
+                li.innerText = ingredient;
+                ingredientsList.appendChild(li);
+            });
+            document.getElementById('ingredientsModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('ingredientsModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('ingredientsModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        function addToCart(item, price) {
+            // Add your add to cart logic here
+            console.log(`Added ${item} to cart for $${price}`);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const cartSidebar = document.getElementById('cart-sidebar');
+            const navCart = document.getElementById('nav-cart');
+            const cartClose = document.getElementById('cart-close');
+
+            navCart.addEventListener('click', () => {
+                cartSidebar.classList.add('show');
+            });
+
+            cartClose.addEventListener('click', () => {
+                cartSidebar.classList.remove('show');
+            });
+        });
+    </script>
+    <script>
+        const navMenu = document.getElementById('nav-menu'),
+              navToggle = document.getElementById('nav-toggle'),
+              navClose = document.getElementById('nav-close');
+
+        if(navToggle){
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.add('show-menu');
+            });
+        }
+
+        if(navClose){
+            navClose.addEventListener('click', () => {
+                navMenu.classList.remove('show-menu');
+            });
+        }
+
+        const navLink = document.querySelectorAll('.nav__link');
+
+        function linkAction(){
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.remove('show-menu');
+        }
+        navLink.forEach(n => n.addEventListener('click', linkAction));
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const cartSidebar = document.getElementById('cart-sidebar');
+            const navCart = document.getElementById('nav-cart');
+            const cartClose = document.getElementById('cart-close');
+
+            navCart.addEventListener('click', () => {
+                cartSidebar.classList.add('show');
+            });
+
+            cartClose.addEventListener('click', () => {
+                cartSidebar.classList.remove('show');
+            });
+
+            loadCart();
+        });
+
+        function loadCart() {
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.querySelector('.cart-items');
+            cartItemsContainer.innerHTML = '';
+
+            cartItems.forEach(item => {
+                addItemToCart(item.title, item.price, item.imageSrc, false);
+            });
+
+            updateCartTotal();
+        }
+
+        function saveCart() {
+            const cartItems = [];
+            document.querySelectorAll('.cart-row').forEach(row => {
+                const title = row.querySelector('.cart-item-title').innerText;
+                const price = row.querySelector('.cart-price').innerText;
+                const imageSrc = row.querySelector('.cart-item-image').src;
+                const quantity = row.querySelector('.cart-quantity-input').value;
+                cartItems.push({ title, price, imageSrc, quantity });
+            });
+
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+        }
+
+        function addItemToCart(title, price, imageSrc, showToastMessage) {
+            const cartItemsContainer = document.querySelector('.cart-items');
+            const cartItemNames = cartItemsContainer.querySelectorAll('.cart-item-title');
+
+            for (let i = 0; i < cartItemNames.length; i++) {
+                if (cartItemNames[i].innerText === title) {
+                    const quantityElement = cartItemNames[i].parentElement.parentElement.querySelector('.cart-quantity-input');
+                    quantityElement.value = parseInt(quantityElement.value) + 1;
+                    updateCartTotal();
+                    saveCart();
+                    if (showToastMessage) {
+                        showToast('Item added to cart');
+                    }
+                    return;
+                }
+            }
+
+            const cartRow = document.createElement('div');
+            cartRow.classList.add('cart-row');
+            const cartRowContents = `
+                <div class="cart-item cart-column">
+                    <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
+                    <span class="cart-item-title">${title}</span>
+                </div>
+                <span class="cart-price cart-column">${price}</span>
+                <div class="cart-quantity cart-column">
+                    <input class="cart-quantity-input" type="number" value="1">
+                    <button class="btn btn-danger" type="button">REMOVE</button>
+                </div>`;
+            cartRow.innerHTML = cartRowContents;
+            cartItemsContainer.append(cartRow);
+            cartRow.querySelector('.btn-danger').addEventListener('click', removeCartItem);
+            cartRow.querySelector('.cart-quantity-input').addEventListener('change', quantityChanged);
+            updateCartTotal();
+            saveCart();
+            if (showToastMessage) {
+                showToast('Item added to cart');
+            }
+        }
+
+        function removeCartItem(event) {
+            const buttonClicked = event.target;
+            buttonClicked.parentElement.parentElement.remove();
+            updateCartTotal();
+            saveCart();
+            showToast('Item removed from cart');
+        }
+
+        function quantityChanged(event) {
+            const input = event.target;
+            if (isNaN(input.value) || input.value <= 0) {
+                input.value = 1;
+            }
+            updateCartTotal();
+            saveCart();
+        }
+
+        function updateCartTotal() {
+            const cartItemContainer = document.querySelector('.cart-items');
+            const cartRows = cartItemContainer.querySelectorAll('.cart-row');
+            let total = 0;
+
+            cartRows.forEach(row => {
+                const priceElement = row.querySelector('.cart-price');
+                const quantityElement = row.querySelector('.cart-quantity-input');
+                const price = parseFloat(priceElement.innerText.replace('$', ''));
+                const quantity = quantityElement.value;
+                total += price * quantity;
+            });
+
+            total = Math.round(total * 100) / 100;
+            document.querySelector('.cart-total-price').innerText = '$' + total;
+        }
+
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerText = message;
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 100);
+            setTimeout(() => {
+                toast.classList.remove('show');
+                document.body.removeChild(toast);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
